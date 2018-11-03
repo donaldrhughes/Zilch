@@ -1,0 +1,31 @@
+footer{
+    text-align:center;
+    background: grey;
+    margin:0 auto;
+    width:100%;
+    color: #cccccc;
+    height:5%;
+}
+
+.navcolor{
+    background: dodgerblue;
+}
+.foot{
+   margin: 0 5%;
+   text-align:center;
+}
+.logo{
+    width:100px;
+}
+.zhead{
+    font-size:18px;
+    color:darkmagenta;
+    margin-left:2%;
+}
+.social{
+    color:#000;
+    text-align:center;
+}
+.game-container{
+    color:#ccc;
+}
