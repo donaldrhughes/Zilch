@@ -44,33 +44,119 @@
         </div>
     </nav>
     <div class="container">
-        <div class="row-md-12 border-top mt-3">
+        <div class="row-md-12 border-top mt-3 h-12">
             <div class="game-container mt-2">
                 <div class="col-md-10 float-left bg-success border border-info rounded">
+
+                    </span>
+                    <h1>Press "r" to roll!</h1>
+                    <h2>Bank: <span id="user-text"><strong>...Nothing.</strong></span></h2>
+
+
                     <span style="font-size: 48px; color: #d9534f;">
-                        <i class="fas fa-dice-one fa-2x"></i>
+                        <i class="fas fa-dice-one fa-1x"></i>
                     </span>
                     <span style="font-size: 48px; color: #d9534f;">
-                            <i class="fas fa-dice-one fa-2x"></i>
-                        </span>
-                        <span style="font-size: 48px; color: #d9534f;">
-                                <i class="fas fa-dice-two fa-2x"></i>
-                            </span>
-                            <span style="font-size: 48px; color: #d9534f;">
-                                    <i class="fas fa-dice-three fa-2x"></i>
-                                </span>
-                                <span style="font-size: 48px; color: #d9534f;">
-                                        <i class="fas fa-dice-four fa-2x"></i>
-                                    </span>
-                                    <span style="font-size: 48px; color: #d9534f;">
-                                            <i class="fas fa-dice-five fa-2x"></i>
-                                        </span>
-                                        <span style="font-size: 48px; color: #d9534f;">
-                                                <i class="fas fa-dice-six fa-2x"></i>
-                                            </span>
+                        <i class="fas fa-dice-two fa-1x"></i>
+                    </span>
+                    <span style="font-size: 48px; color: #d9534f;">
+                        <i class="fas fa-dice-three fa-1x"></i>
+                    </span>
+                    <span style="font-size: 48px; color: #d9534f;">
+                        <i class="fas fa-dice-four fa-1x"></i>
+                    </span>
+                    <span style="font-size: 48px; color: #d9534f;">
+                        <i class="fas fa-dice-five fa-1x"></i>
+                    </span>
+                    <span style="font-size: 48px; color: #d9534f;">
+                        <i class="fas fa-dice-six fa-1x"></i>
+                    </span>
+                    <p>You Chose:</p>
+
+                    <script type="text/javascript">
+
+                        var userText = document.getElementById("user-text");
+
+
+                        var turn = 1;
+                        var round = 1;
+                        var totalgames;
+                        var player = {
+                            pnum: "",
+                            name: "player1",
+                            isTurn: false,
+                            onBoard: false,
+                            wins: 0,
+                            losses: 0,
+                            score: 0,
+                            bank: 0,
+                        };
+
+
+
+
+                        var diceresult = [];
+                        document.onkeyup = function () {
+                            var startroll = String.fromCharCode(event.keyCode).
+                                toLowerCase();
+                            for (var index = 0; index < 6; index++) {
+                                rolldice();
+                                userText.textContent = diceresult;
+                            }
+
+                        }
+
+
+                        function rolldice() {
+                            var min = 1;
+                            var max = 7;
+                            var random = Math.floor(Math.random() * (+max - +min)) + +min;
+                            diceresult.push(random);
+                            return random;
+                            console.log(random);
+                        }
+
+
+                  
+
+
+
+
+
+                    </script>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur placeat, quos labore
+                    mollitia
+                    voluptates non eum hic voluptas dolore ullam, excepturi sit quas aut nihil cum similique
+                    amet
+                    corporis esse?
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur placeat, quos labore
+                    mollitia
+                    voluptates non eum hic voluptas dolore ullam, excepturi sit quas aut nihil cum similique
+                    amet
+                    corporis esse?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur
+                    placeat, quos
+                    labore mollitia
+                    voluptates non eum hic voluptas dolore ullam, excepturi sit quas aut nihil cum similique
+                    amet
+                    corporis esse?
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur placeat, quos labore
+                    mollitia
+                    voluptates non eum hic voluptas dolore ullam, excepturi sit quas aut nihil cum similique
+                    amet
+                    corporis esse?
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur placeat, quos labore
+                    mollitia
+                    voluptates non eum hic voluptas dolore ullam, excepturi sit quas aut nihil cum similique
+                    amet
+                    corporis esse?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur
+                    placeat, quos
+                    labore mollitia
+                    voluptates non eum hic voluptas dolore ullam, excepturi sit quas aut nihil cum similique
+                    amet
+                    corporis esse?
                 </div>
 
-                
+
 
             </div>
             <div class="col-md-2 float-right">
