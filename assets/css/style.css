@@ -28,4 +28,5 @@ footer{
 }
 .game-container{
     color:#ccc;
+    overflow:auto;
 }

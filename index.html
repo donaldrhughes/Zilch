@@ -51,6 +51,9 @@
                     </span>
                     <h1>Press "r" to roll!</h1>
                     <h2>Bank: <span id="user-text"><strong>...Nothing.</strong></span></h2>
+                    <h2>Turn: <span id="turn-text"></span></h2>
+                    <h2>Round: <span id="round-text"></span></h2>
+                    <h2>Roll#:<span id="rollcount-text"></span></h2>
 
 
                     <span style="font-size: 48px; color: #d9534f;">
@@ -76,10 +79,14 @@
                     <script type="text/javascript">
 
                         var userText = document.getElementById("user-text");
+                        var turnText = document.getElementById("turn-text");
+                        var roundText = document.getElementById("round-text");
+                        var rollcountText = document.getElementById("rollcount-text");
 
 
                         var turn = 1;
                         var round = 1;
+                        var rollcount = 0;
                         var totalgames;
                         var player = {
                             pnum: "",
@@ -93,31 +100,42 @@
                         };
 
 
+                        function rolldice() {
+                            var min = 1;
+                            var max = 7;
 
+                            var random = Math.floor(Math.random() * (+max - +min)) + +min;
+                            diceresult += random;
+                            
+                            userText.textContent = diceresult;
+
+                            turnText.textContent = turn;
+                            roundText.textContent = round;
+                            // return random;
+
+                        }
 
                         var diceresult = [];
                         document.onkeyup = function () {
                             var startroll = String.fromCharCode(event.keyCode).
                                 toLowerCase();
+                                rollcount++;
+                            rollcountText.textContent = rollcount;
                             for (var index = 0; index < 6; index++) {
                                 rolldice();
-                                userText.textContent = diceresult;
+                               
+
+
+
                             }
 
                         }
 
 
-                        function rolldice() {
-                            var min = 1;
-                            var max = 7;
-                            var random = Math.floor(Math.random() * (+max - +min)) + +min;
-                            diceresult.push(random);
-                            return random;
-                            console.log(random);
-                        }
 
 
-                  
+
+
 
 
 
