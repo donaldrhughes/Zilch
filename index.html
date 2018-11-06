@@ -10,6 +10,8 @@
         crossorigin="anonymous">
     <script defer src="https://use.fontawesome.com/releases/v5.4.2/js/all.js" integrity="sha384-wp96dIgDl5BLlOXb4VMinXPNiB32VYBSoXOoiARzSTXY+tsK8yDTYfvdTyqzdGGN"
         crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
@@ -49,7 +51,7 @@
                 <div class="col-md-10 float-left bg-success border border-info rounded">
 
                     </span>
-                    <h1>Press "r" to roll!</h1>
+                    <h1><button id="roll-button" class="btn btn-primary btn-lg">Roll</button></h1>
                     <h2>Bank: <span id="user-text"><strong>...Nothing.</strong></span></h2>
                     <h2>Turn: <span id="turn-text"></span></h2>
                     <h2>Round: <span id="round-text"></span></h2>
@@ -78,14 +80,22 @@
 
                     <script type="text/javascript">
 
-                        var userText = document.getElementById("user-text");
-                        var turnText = document.getElementById("turn-text");
-                        var roundText = document.getElementById("round-text");
-                        var rollcountText = document.getElementById("rollcount-text");
-
+                        // var userText = document.getElementById("user-text");
+                        // var turnText = document.getElementById("turn-text");
+                        // var roundText = document.getElementById("round-text");
+                        // var rollcountText = document.getElementById("rollcount-text");
+                        var userText = $("#user-text");
+                        var turnText = $("#turn-text");
+                        var roundText = $("#round-text");
+                        var rollcountText = $("#rollcount-text");
+                        var diceresult = "";
+                        
+                        
 
                         var turn = 1;
+                        turnText.text(turn);
                         var round = 1;
+                        roundText.text(round);
                         var rollcount = 0;
                         var totalgames;
                         var player = {
@@ -107,35 +117,24 @@
                             var random = Math.floor(Math.random() * (+max - +min)) + +min;
                             diceresult += random;
                             
-                            userText.textContent = diceresult;
-
-                            turnText.textContent = turn;
-                            roundText.textContent = round;
-                            // return random;
+                            userText.text(diceresult);
 
                         }
-
-                        var diceresult = [];
-                        document.onkeyup = function () {
-                            var startroll = String.fromCharCode(event.keyCode).
-                                toLowerCase();
-                                rollcount++;
-                            rollcountText.textContent = rollcount;
+                        $(document).ready(function() {
+ 
+                      $("#roll-button").on("click" , function () {
+                            
+                            rollcount++;
+                            rollcountText.text(rollcount);
                             for (var index = 0; index < 6; index++) {
                                 rolldice();
-                               
-
 
 
                             }
 
-                        }
-
-
-
-
-
-
+                        })
+                        
+                        });
 
 
 
