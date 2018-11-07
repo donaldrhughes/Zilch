@@ -6,7 +6,9 @@ footer{
     color: #cccccc;
     height:5%;
 }
-
+.js-zilch{
+    overflow:none;
+}
 .navcolor{
     background: dodgerblue;
 }

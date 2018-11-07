@@ -10,7 +10,7 @@
         crossorigin="anonymous">
     <script defer src="https://use.fontawesome.com/releases/v5.4.2/js/all.js" integrity="sha384-wp96dIgDl5BLlOXb4VMinXPNiB32VYBSoXOoiARzSTXY+tsK8yDTYfvdTyqzdGGN"
         crossorigin="anonymous"></script>
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css">
@@ -50,144 +50,76 @@
             <div class="game-container mt-2">
                 <div class="col-md-10 float-left bg-success border border-info rounded">
 
-                    </span>
-                    <h1><button id="roll-button" class="btn btn-primary btn-lg">Roll</button></h1>
-                    <h2>Bank: <span id="user-text"><strong>...Nothing.</strong></span></h2>
-                    <h2>Turn: <span id="turn-text"></span></h2>
-                    <h2>Round: <span id="round-text"></span></h2>
-                    <h2>Roll#:<span id="rollcount-text"></span></h2>
 
 
-                    <span style="font-size: 48px; color: #d9534f;">
-                        <i class="fas fa-dice-one fa-1x"></i>
-                    </span>
-                    <span style="font-size: 48px; color: #d9534f;">
-                        <i class="fas fa-dice-two fa-1x"></i>
-                    </span>
-                    <span style="font-size: 48px; color: #d9534f;">
-                        <i class="fas fa-dice-three fa-1x"></i>
-                    </span>
-                    <span style="font-size: 48px; color: #d9534f;">
-                        <i class="fas fa-dice-four fa-1x"></i>
-                    </span>
-                    <span style="font-size: 48px; color: #d9534f;">
-                        <i class="fas fa-dice-five fa-1x"></i>
-                    </span>
-                    <span style="font-size: 48px; color: #d9534f;">
-                        <i class="fas fa-dice-six fa-1x"></i>
-                    </span>
-                    <p>You Chose:</p>
+                    <div class="row">
+                        <div class="col">
+                            <h4>Roll#:<span id="rollcount-text"></span></h4>
+                        </div>
+                        <div class="col">
+                            <h4>Round: <span id="round-text"></span></h4>
+                        </div>
+                        <div class="col">
+                            <h4>Turn: <span id="turn-text"></span></h4>
+                        </div>
 
-                    <script type="text/javascript">
-
-                        // var userText = document.getElementById("user-text");
-                        // var turnText = document.getElementById("turn-text");
-                        // var roundText = document.getElementById("round-text");
-                        // var rollcountText = document.getElementById("rollcount-text");
-                        var userText = $("#user-text");
-                        var turnText = $("#turn-text");
-                        var roundText = $("#round-text");
-                        var rollcountText = $("#rollcount-text");
-                        var diceresult = "";
-                        
-                        
-
-                        var turn = 1;
-                        turnText.text(turn);
-                        var round = 1;
-                        roundText.text(round);
-                        var rollcount = 0;
-                        var totalgames;
-                        var player = {
-                            pnum: "",
-                            name: "player1",
-                            isTurn: false,
-                            onBoard: false,
-                            wins: 0,
-                            losses: 0,
-                            score: 0,
-                            bank: 0,
-                        };
+                    </div>
+                    <div class="row">
+                        <div class="col">
 
 
-                        function rolldice() {
-                            var min = 1;
-                            var max = 7;
+                                <h4>Result: <span id="user-text"> Ready to roll!</span></h4>
+                                <h3>You Chose:</h3>
+                                <span style="font-size: 48px; color: #d9534f;">
+                                    <i class="fas fa-dice-one fa-1x"></i>
+                                </span>
+                                <span style="font-size: 48px; color: #d9534f;">
+                                    <i class="fas fa-dice-two fa-1x"></i>
+                                </span>
+                                <span style="font-size: 48px; color: #d9534f;">
+                                    <i class="fas fa-dice-three fa-1x"></i>
+                                </span>
+                                <span style="font-size: 48px; color: #d9534f;">
+                                    <i class="fas fa-dice-four fa-1x"></i>
+                                </span>
+                                <span style="font-size: 48px; color: #d9534f;">
+                                    <i class="fas fa-dice-five fa-1x"></i>
+                                </span>
+                                <span style="font-size: 48px; color: #d9534f;">
+                                    <i class="fas fa-dice-six fa-1x"></i>
+                                </span>
+            
+                                <h1><button id="roll-button" class="btn btn-primary btn-lg">Roll</button></h1>
+            
+                                <div class="js-zilch">
+                                    <script src="./assets/javascript/zilch.js"></script>
+                                </div>
 
-                            var random = Math.floor(Math.random() * (+max - +min)) + +min;
-                            diceresult += random;
-                            
-                            userText.text(diceresult);
-
-                        }
-                        $(document).ready(function() {
- 
-                      $("#roll-button").on("click" , function () {
-                            
-                            rollcount++;
-                            rollcountText.text(rollcount);
-                            for (var index = 0; index < 6; index++) {
-                                rolldice();
+                        </div>
+                    </div>
 
 
-                            }
+                </div>
 
-                        })
-                        
-                        });
+                <div class="col-md-2 float-right">
+                    <div class="social mt-2">
+                        <h2> Check Zilch out on: </h2>
+                        <span style="font-size: 48px; color: Dodgerblue;">
+                            <i class="fab fa-twitter"></i></span>
+                        Twitter,<p></p>
+                        <span style="font-size: 48px; color: Dodgerblue;">
+                            <i class="fab fa-telegram-plane"></i></span>
+                        Telegram,
+                    </div>
 
 
-
-
-
-                    </script>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur placeat, quos labore
-                    mollitia
-                    voluptates non eum hic voluptas dolore ullam, excepturi sit quas aut nihil cum similique
-                    amet
-                    corporis esse?
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur placeat, quos labore
-                    mollitia
-                    voluptates non eum hic voluptas dolore ullam, excepturi sit quas aut nihil cum similique
-                    amet
-                    corporis esse?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur
-                    placeat, quos
-                    labore mollitia
-                    voluptates non eum hic voluptas dolore ullam, excepturi sit quas aut nihil cum similique
-                    amet
-                    corporis esse?
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur placeat, quos labore
-                    mollitia
-                    voluptates non eum hic voluptas dolore ullam, excepturi sit quas aut nihil cum similique
-                    amet
-                    corporis esse?
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur placeat, quos labore
-                    mollitia
-                    voluptates non eum hic voluptas dolore ullam, excepturi sit quas aut nihil cum similique
-                    amet
-                    corporis esse?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur
-                    placeat, quos
-                    labore mollitia
-                    voluptates non eum hic voluptas dolore ullam, excepturi sit quas aut nihil cum similique
-                    amet
-                    corporis esse?
                 </div>
 
 
 
-            </div>
-            <div class="col-md-2 float-right">
-                <div class="social mt-2">
-                    <h2> Check Zilch out on: </h2>
-                    <span style="font-size: 48px; color: Dodgerblue;">
-                        <i class="fab fa-twitter"></i></span>
-                    Twitter,<p></p>
-                    <span style="font-size: 48px; color: Dodgerblue;">
-                        <i class="fab fa-telegram-plane"></i></span>
-                    Telegram,
-                </div>
             </div>
         </div>
+    </div>
     </div>
 
 
