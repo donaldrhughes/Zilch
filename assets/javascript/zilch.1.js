@@ -38,17 +38,15 @@ var player = {
 
 //Roll the dice!
 function rolldice() {
-    for (var index = 0; index < 6; index++) {
-    
     var min = 1;
     var max = 7;
 
     var random = Math.floor(Math.random() * (+max - +min)) + +min;
     
-    diceresult += random + " "
+    diceresult += random
     userText.text(diceresult);
 
-}}
+}
 
 //Main Section
 //===================================================
@@ -58,11 +56,14 @@ function rolldice() {
 $(document).ready(function () {
 
     $("#roll-button").on("click", function () {
-        diceresult=[];
+
         rollcount++;
         rollcountText.text(rollcount);
-        
+        for (var index = 0; index < 6; index++) {
             rolldice();
+
+
+        }
 
     })
 

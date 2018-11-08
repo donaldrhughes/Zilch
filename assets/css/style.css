@@ -4,7 +4,7 @@ footer{
     margin:0 auto;
     width:100%;
     color: #cccccc;
-    height:5%;
+    height:10%;
 }
 .js-zilch{
     overflow:none;
@@ -31,4 +31,7 @@ footer{
 .game-container{
     color:#ccc;
     overflow:auto;
+}
+.zlogo{
+    width:400px;
 }
