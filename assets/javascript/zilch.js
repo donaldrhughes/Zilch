@@ -1,4 +1,4 @@
-
+$(document).ready(function () {
 
 // Declare Global Vars
 //================================================
@@ -55,7 +55,7 @@ function rolldice() {
 
 
 // Roll Button click handler
-$(document).ready(function () {
+
 
     $("#roll-button").on("click", function () {
         diceresult=[];
