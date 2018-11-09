@@ -1,4 +1,7 @@
+// General Compatibility
 $(document).ready(function () {
+
+
 
 // Declare Global Vars
 //================================================
