@@ -3,8 +3,8 @@ footer{
     background: grey;
     margin:0 auto;
     width:100%;
-    color: #cccccc;
-    height:10%;
+    color: #a5998b;
+    height:5%;
 }
 .js-zilch{
     overflow:none;
@@ -18,6 +18,7 @@ footer{
 }
 .logo{
     width:100px;
+    clear:both;
 }
 .zhead{
     font-size:18px;
