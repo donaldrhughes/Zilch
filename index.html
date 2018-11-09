@@ -17,36 +17,47 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light mt-0">
-        <a class="navbar-brand" href="index.html"></a>
 
-        <!-- logo image old code -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <!-- logo image code -->
+                <p class="zhead border border-rounded text-center"> <img src="./assets/images/Zilch_logo1.jpg" class="zlogo ">
+                </p>
+            </div>
 
-        <p class="zhead border border-rounded bg-dark"> <img src="./assets/images/Zilch_logo1.jpg" class="zlogo mt-0"> </p>
+            
+                <nav class="navbar navbar-expand-lg navbar-light mt-0">
+                    <a class="navbar-brand" href="index.html"></a>
 
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Play
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">How to Play</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
-            </ul>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
 
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Play
+                                    <span class="sr-only">(current)</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">How to Play</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Contact</a>
+                            </li>
+                        </ul>
+                    
+            </div>
+            </nav>
         </div>
-    </nav>
+    </div>
+
+
     <div class="container">
         <div class="row-md-12 border-top mt-3 h-12">
             <div class="game-container mt-2">
@@ -59,10 +70,10 @@
                             <h4>Roll#:<span id="rollcount-text"></span></h4>
                         </div>
                         <div class="col">
-                             <h3>Hold Area</h3>
+                            <h3>Hold Area</h3>
                         </div>
                         <div class="col">
-                                  
+
                             <!-- <span style="font-size: 48px; color: #d9534f;">
                                 <i class="fas fa-dice-one "></i>
                             </span>
@@ -88,18 +99,22 @@
                         <div class="col">
 
 
-                            
-                     
+
+
 
                             <h1><button id="roll-button" class="btn btn-primary btn-lg">Roll</button></h1>
 
 
                             <div class="card bg-dark text-white">
                                 <img class="card-img" src="./assets/images/Zilch_Table.jpg" alt="Card image">
-                                <div class="card-img-overlay"> 
+                                <div class="card-img-overlay">
                                     <h5 class="card-title">Result: <span id="user-text"> Ready to roll!</span></h5>
-                                    <p class="card-text"><h4>Turn: <span id="turn-text"></span></h4></p>
-                                    <p class="card-text"><h4>Round: <span id="round-text"></span></h4></p>
+                                    <p class="card-text">
+                                        <h4>Turn: <span id="turn-text"></span></h4>
+                                    </p>
+                                    <p class="card-text">
+                                        <h4>Round: <span id="round-text"></span></h4>
+                                    </p>
                                 </div>
                             </div>
 
@@ -130,18 +145,18 @@
         </div>
     </div>
     </div>
-<div class="container-fluid">
+    <div class="container-fluid">
 
-    <footer class="row mt-12 fixed-bottom">
-        <div class="col-6">
-            <!-- <span style="font-size: 36px; color: white;">
+        <footer class="row mt-12 fixed-bottom">
+            <div class="col-6">
+                <!-- <span style="font-size: 36px; color: white;">
                 <i class="fas fa-dice fa-1x border rounded-circle bg-success"></i></div> -->
-        </span>
-        <div class="col-6">
-            <div class="text-justify foot">Copyright 2018 - Zilch </div>
+                </span>
+                <div class="col-6">
+                    <div class="text-justify foot">Copyright 2018 - Zilch </div>
 
-    </footer>
-</div>
+        </footer>
+    </div>
 
     <!-- Main JavaScript Source Link -->
 

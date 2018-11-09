@@ -18,7 +18,7 @@ footer{
 }
 .logo{
     width:100px;
-    clear:both;
+    
 }
 .zhead{
     font-size:18px;
@@ -34,5 +34,8 @@ footer{
     overflow:auto;
 }
 .zlogo{
-    width:400px;
+    width:200px;
+    clear:both;
+    background:#fff;
+
 }
