@@ -57,6 +57,7 @@ $(document).ready(function () {
         var dieCount = [];
         scoring(diceResult, dieCount);
         $("#result-text").text(results);
+        $("#bank-text").text(" " + player.bank);
 
 
     };
