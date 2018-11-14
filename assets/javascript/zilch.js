@@ -152,9 +152,59 @@ $(document).ready(function () {
 
         }
         if (dieCount[0] == 6) {
-            player.bank += 10000;
+            player.bank += 10000;    
+        }
+
+
+      
+        if (dieCount[1] == 3) {
+            player.bank += 200;
+        }
+        if (dieCount[1] == 4) {
+            player.bank += 2000;
 
         }
+        if (dieCount[1] == 5) {
+            player.bank += 5000;
+
+        }
+        if (dieCount[1] == 6) {
+            player.bank += 10000;    
+        }
+
+
+        if (dieCount[2] == 3) {
+            player.bank += 300;
+        }
+        if (dieCount[2] == 4) {
+            player.bank += 2000;
+
+        }
+        if (dieCount[2] == 5) {
+            player.bank += 5000;
+
+        }
+        if (dieCount[2] == 6) {
+            player.bank += 10000;    
+        }
+
+
+        if (dieCount[3] == 3) {
+            player.bank += 300;
+        }
+        if (dieCount[3] == 4) {
+            player.bank += 2000;
+
+        }
+        if (dieCount[3] == 5) {
+            player.bank += 5000;
+
+        }
+        if (dieCount[3] == 6) {
+            player.bank += 10000;    
+        }
+
+
         if (dieCount[4] == 1) {
             player.bank += 50;
         }
@@ -177,6 +227,24 @@ $(document).ready(function () {
             player.bank += 10000;
 
         }
+
+
+        if (dieCount[5] == 3) {
+            player.bank += 600;
+        }
+        if (dieCount[5] == 4) {
+            player.bank += 2000;
+
+        }
+        if (dieCount[5] == 5) {
+            player.bank += 5000;
+
+        }
+        if (dieCount[5] == 6) {
+            player.bank += 10000;    
+        }
+
+
 
         console.log(dieCount);
 
