@@ -132,6 +132,15 @@ $(document).ready(function () {
 
 
     function updateBank() {
+        // dieCount = [1,1,1,1,1,1];
+        player.bank = 0;
+        if (dieCount[0] == 1 && dieCount[1] == 2 && dieCount[2] == 3) {
+            player.bank += 3500;
+        } 
+        else if (dieCount[0] == 1 && dieCount[1] == 1 && dieCount[2] == 1 && dieCount[3] == 1 && dieCount[4] == 1 && dieCount[5] == 1) {
+            player.bank += 4000;
+        }
+        else {
 
         if (dieCount[0] == 1) {
             player.bank += 100;
@@ -152,11 +161,11 @@ $(document).ready(function () {
 
         }
         if (dieCount[0] == 6) {
-            player.bank += 10000;    
+            player.bank += 10000;
         }
 
 
-      
+
         if (dieCount[1] == 3) {
             player.bank += 200;
         }
@@ -169,7 +178,7 @@ $(document).ready(function () {
 
         }
         if (dieCount[1] == 6) {
-            player.bank += 10000;    
+            player.bank += 10000;
         }
 
 
@@ -185,7 +194,7 @@ $(document).ready(function () {
 
         }
         if (dieCount[2] == 6) {
-            player.bank += 10000;    
+            player.bank += 10000;
         }
 
 
@@ -201,7 +210,7 @@ $(document).ready(function () {
 
         }
         if (dieCount[3] == 6) {
-            player.bank += 10000;    
+            player.bank += 10000;
         }
 
 
@@ -241,11 +250,11 @@ $(document).ready(function () {
 
         }
         if (dieCount[5] == 6) {
-            player.bank += 10000;    
+            player.bank += 10000;
         }
 
 
-
+    }
         console.log(dieCount);
 
     }
