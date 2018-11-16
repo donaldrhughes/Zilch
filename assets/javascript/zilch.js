@@ -49,7 +49,7 @@ $(document).ready(function () {
 
 
     //Roll the dice!
-    function rolldice() {
+    function rolldice(rolldice) {
         var diceResult = [];
         var diceResult = Array.from({ length: 6 }, () => Math.floor(Math.random() * 6) + 1);
         var results = [];
@@ -79,9 +79,10 @@ $(document).ready(function () {
 
 
     //Scoring
-    function scoring(diceResult) {
+    function scoring(diceResult, threePairs) {
         countDice(diceResult);
-        updateBank();
+        // threePair(dieCount, updateBank);
+        updateBank(dieCount, threePairs);
 
 
 
@@ -131,31 +132,38 @@ $(document).ready(function () {
     }
 
 
-    function updateBank() {
+
+    function updateBank(dieCount) {
         // used for testing specific rolls, as needed
-        // dieCount = [2, 2, 2, 0, 0, 0];
+
         player.bank = 0;
-        // var threePairs = [0, 0, 0];
-        // console.log(threePairs);
 
 
-        // function threePair(dieCount) {
-        //     for (k = 0; k < dieCount.length; k++) {
-        //         if (dieCount[i] == 2) {
-        //             threePairs.("Valid");
-        //         }
-        //     }
-        //     console.log(threePairs);
-        // }
-        // threePair();
+        // dieCount = [2, 2, 2, 0, 0, 0];
+        var threePairs = [0, 0, 0];
 
+        for (k = 0; k < dieCount.length; k++) {
+            if (dieCount[k] == 2) {
 
+                threePairs.unshift("Valid");
+                threePairs.splice(-1, 3);
 
+            }
+        }
+     
+       
+        console.log(threePairs);
+        console.log(player.bank);
+
+        
         if (dieCount[0] == 1 && dieCount[1] == 2 && dieCount[2] == 3) {
             player.bank += 3500;
         }
         else if (dieCount[0] == 1 && dieCount[1] == 1 && dieCount[2] == 1 && dieCount[3] == 1 && dieCount[4] == 1 && dieCount[5] == 1) {
             player.bank += 4000;
+        }
+        else if (threePairs[0] == "Valid" && threePairs[1] == "Valid" && threePairs[2] == "Valid") {
+            player.bank += 3000;
         }
         else {
 
@@ -271,11 +279,11 @@ $(document).ready(function () {
             }
 
 
-             if (player.bank == 0) {
-                 alert(Zilch);
-                 console.log(player.bank);
+            if (player.bank == 0) {
+                alert(Zilch);
+                console.log(player.bank);
 
-             }
+            }
 
         }
 
