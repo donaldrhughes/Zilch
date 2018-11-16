@@ -89,7 +89,8 @@ $(document).ready(function () {
         console.log("Player Bank" + " " + player.bank);
     }
 
-
+    //Count how many dice of each number you got
+    //========
     function countDice(diceResult) {
         var count1 = 0;
         var count2 = 0;
@@ -136,37 +137,33 @@ $(document).ready(function () {
     function updateBank(dieCount) {
         // used for testing specific rolls, as needed
 
-        player.bank = 0;
-
-
-        // dieCount = [2, 2, 2, 0, 0, 0];
+        //3 pairs main variable
         var threePairs = [0, 0, 0];
-
         for (k = 0; k < dieCount.length; k++) {
             if (dieCount[k] == 2) {
-
                 threePairs.unshift("Valid");
                 threePairs.splice(-1, 3);
-
             }
         }
-     
-       
+
         console.log(threePairs);
         console.log(player.bank);
 
-        
+        // ^^ Pyramid
         if (dieCount[0] == 1 && dieCount[1] == 2 && dieCount[2] == 3) {
             player.bank += 3500;
         }
+        // ^^ Straight
         else if (dieCount[0] == 1 && dieCount[1] == 1 && dieCount[2] == 1 && dieCount[3] == 1 && dieCount[4] == 1 && dieCount[5] == 1) {
             player.bank += 4000;
         }
+        // ^^ 3 Pairs
         else if (threePairs[0] == "Valid" && threePairs[1] == "Valid" && threePairs[2] == "Valid") {
             player.bank += 3000;
         }
         else {
-
+            //Remainder of rolls -- 1's 5's 2,3,4,5,6 of a kind
+            //====
             if (dieCount[0] == 1) {
                 player.bank += 100;
             }
