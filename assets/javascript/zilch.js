@@ -89,8 +89,8 @@ $(document).ready(function () {
         console.log("Player Bank" + " " + player.bank);
     }
 
-    //Count how many dice of each number you got
-    //========
+//Count how many dice of each number you got
+//========
     function countDice(diceResult) {
         var count1 = 0;
         var count2 = 0;
@@ -136,7 +136,7 @@ $(document).ready(function () {
 
     function updateBank(dieCount) {
         // used for testing specific rolls, as needed
-
+player.bank = 0;
         //3 pairs main variable
         var threePairs = [0, 0, 0];
         for (k = 0; k < dieCount.length; k++) {
@@ -145,7 +145,7 @@ $(document).ready(function () {
                 threePairs.splice(-1, 3);
             }
         }
-
+     
         console.log(threePairs);
         console.log(player.bank);
 
