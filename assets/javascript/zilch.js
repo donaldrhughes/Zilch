@@ -221,7 +221,7 @@ player.bank = 0;
 
 
             if (dieCount[3] == 3) {
-                player.bank += 300;
+                player.bank += 400;
             }
             if (dieCount[3] == 4) {
                 player.bank += 2000;
