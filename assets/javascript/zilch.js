@@ -89,8 +89,8 @@ $(document).ready(function () {
         console.log("Player Bank" + " " + player.bank);
     }
 
-//Count how many dice of each number you got
-//========
+    //Count how many dice of each number you got
+    //========
     function countDice(diceResult) {
         var count1 = 0;
         var count2 = 0;
@@ -136,19 +136,22 @@ $(document).ready(function () {
 
     function updateBank(dieCount) {
         // used for testing specific rolls, as needed
-player.bank = 0;
+        player.bank = 0;
         //3 pairs main variable
         var threePairs = [0, 0, 0];
+        var onePair = false;
         for (k = 0; k < dieCount.length; k++) {
             if (dieCount[k] == 2) {
                 threePairs.unshift("Valid");
                 threePairs.splice(-1, 3);
+                onePair = true;
             }
         }
-     
+        console.log(onePair);
         console.log(threePairs);
         console.log(player.bank);
 
+        
         // ^^ Pyramid
         if (dieCount[0] == 1 && dieCount[1] == 2 && dieCount[2] == 3) {
             player.bank += 3500;
@@ -161,132 +164,135 @@ player.bank = 0;
         else if (threePairs[0] == "Valid" && threePairs[1] == "Valid" && threePairs[2] == "Valid") {
             player.bank += 3000;
         }
+        else if (onePair = true && ((dieCount[0] == 4) || (dieCount[1] == 4) || (dieCount[2] == 4) || (dieCount[3] == 4) || (dieCount[4] == 4) || (dieCount[5] == 4))){
+            player.bank += 3000;}
+        
         else {
-            //Remainder of rolls -- 1's 5's 2,3,4,5,6 of a kind
-            //====
-            if (dieCount[0] == 1) {
-                player.bank += 100;
-            }
+        //Remainder of rolls -- 1's 5's 2,3,4,5,6 of a kind
+        //====
+        if (dieCount[0] == 1) {
+            player.bank += 100;
+        }
 
-            if (dieCount[0] == 2) {
-                player.bank += 200;
-            }
-            if (dieCount[0] == 3) {
-                player.bank += 1000;
-            }
-            if (dieCount[0] == 4) {
-                player.bank += 2500;
+        if (dieCount[0] == 2) {
+            player.bank += 200;
+        }
+        if (dieCount[0] == 3) {
+            player.bank += 1000;
+        }
+        if (dieCount[0] == 4) {
+            player.bank += 2500;
 
-            }
-            if (dieCount[0] == 5) {
-                player.bank += 5000;
+        }
+        if (dieCount[0] == 5) {
+            player.bank += 5000;
 
-            }
-            if (dieCount[0] == 6) {
-                player.bank += 10000;
-            }
-
-
-
-            if (dieCount[1] == 3) {
-                player.bank += 200;
-            }
-            if (dieCount[1] == 4) {
-                player.bank += 2000;
-
-            }
-            if (dieCount[1] == 5) {
-                player.bank += 5000;
-
-            }
-            if (dieCount[1] == 6) {
-                player.bank += 10000;
-            }
+        }
+        if (dieCount[0] == 6) {
+            player.bank += 10000;
+        }
 
 
-            if (dieCount[2] == 3) {
-                player.bank += 300;
-            }
-            if (dieCount[2] == 4) {
-                player.bank += 2000;
 
-            }
-            if (dieCount[2] == 5) {
-                player.bank += 5000;
+        if (dieCount[1] == 3) {
+            player.bank += 200;
+        }
+        if (dieCount[1] == 4) {
+            player.bank += 2000;
 
-            }
-            if (dieCount[2] == 6) {
-                player.bank += 10000;
-            }
+        }
+        if (dieCount[1] == 5) {
+            player.bank += 5000;
 
-
-            if (dieCount[3] == 3) {
-                player.bank += 400;
-            }
-            if (dieCount[3] == 4) {
-                player.bank += 2000;
-
-            }
-            if (dieCount[3] == 5) {
-                player.bank += 5000;
-
-            }
-            if (dieCount[3] == 6) {
-                player.bank += 10000;
-            }
+        }
+        if (dieCount[1] == 6) {
+            player.bank += 10000;
+        }
 
 
-            if (dieCount[4] == 1) {
-                player.bank += 50;
-            }
+        if (dieCount[2] == 3) {
+            player.bank += 300;
+        }
+        if (dieCount[2] == 4) {
+            player.bank += 2000;
 
-            if (dieCount[4] == 2) {
-                player.bank += 100;
-            }
-            if (dieCount[4] == 3) {
-                player.bank += 500;
-            }
-            if (dieCount[4] == 4) {
-                player.bank += 2000;
+        }
+        if (dieCount[2] == 5) {
+            player.bank += 5000;
 
-            }
-            if (dieCount[4] == 5) {
-                player.bank += 5000;
-
-            }
-            if (dieCount[4] == 6) {
-                player.bank += 10000;
-
-            }
+        }
+        if (dieCount[2] == 6) {
+            player.bank += 10000;
+        }
 
 
-            if (dieCount[5] == 3) {
-                player.bank += 600;
-            }
-            if (dieCount[5] == 4) {
-                player.bank += 2000;
+        if (dieCount[3] == 3) {
+            player.bank += 400;
+        }
+        if (dieCount[3] == 4) {
+            player.bank += 2000;
 
-            }
-            if (dieCount[5] == 5) {
-                player.bank += 5000;
+        }
+        if (dieCount[3] == 5) {
+            player.bank += 5000;
 
-            }
-            if (dieCount[5] == 6) {
-                player.bank += 10000;
-            }
+        }
+        if (dieCount[3] == 6) {
+            player.bank += 10000;
+        }
 
 
-            if (player.bank == 0) {
-                alert(Zilch);
-                console.log(player.bank);
+        if (dieCount[4] == 1) {
+            player.bank += 50;
+        }
 
-            }
+        if (dieCount[4] == 2) {
+            player.bank += 100;
+        }
+        if (dieCount[4] == 3) {
+            player.bank += 500;
+        }
+        if (dieCount[4] == 4) {
+            player.bank += 2000;
+
+        }
+        if (dieCount[4] == 5) {
+            player.bank += 5000;
+
+        }
+        if (dieCount[4] == 6) {
+            player.bank += 10000;
 
         }
 
-        console.log(dieCount);
+
+        if (dieCount[5] == 3) {
+            player.bank += 600;
+        }
+        if (dieCount[5] == 4) {
+            player.bank += 2000;
+
+        }
+        if (dieCount[5] == 5) {
+            player.bank += 5000;
+
+        }
+        if (dieCount[5] == 6) {
+            player.bank += 10000;
+        }
+
+
+        if (player.bank == 0) {
+            alert(Zilch);
+            console.log(player.bank);
+
+        }
 
     }
+
+    console.log(dieCount);
+
+}
 
     //Check if won
 
