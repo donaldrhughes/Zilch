@@ -62,16 +62,6 @@ $(document).ready(function () {
 
     };
 
-    //Jquery for HTML updates
-    // function assignVars() {
-    //     var resultText = $("#result-text");
-    //     var turnText = $("#turn-text");
-    //     var roundText = $("#round-text");
-    //     var rollcountText = $("#rollcount-text");
-    //     var bankText = $("#bank-text");
-
-    // }
-
 
 
     // Hold Dice
@@ -164,6 +154,7 @@ $(document).ready(function () {
         else if (threePairs[0] == "Valid" && threePairs[1] == "Valid" && threePairs[2] == "Valid") {
             player.bank += 3000;
         }
+        // ^^ 3 Pairs w 4 of a kind and 1 pair
         else if (onePair = true && ((dieCount[0] == 4) || (dieCount[1] == 4) || (dieCount[2] == 4) || (dieCount[3] == 4) || (dieCount[4] == 4) || (dieCount[5] == 4))){
             player.bank += 3000;}
         
@@ -283,7 +274,11 @@ $(document).ready(function () {
 
 
         if (player.bank == 0) {
-            alert(Zilch);
+            // alert(Zilch);
+            
+            $('#myModal').modal('show');
+
+
             console.log(player.bank);
 
         }
