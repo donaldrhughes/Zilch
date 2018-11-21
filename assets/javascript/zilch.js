@@ -113,17 +113,20 @@ $(document).ready(function () {
 
     //Roll the dice!
     function rolldice(rolldice) {
+        $("#message-text").empty();
         var diceResult = [];
         var diceResult = Array.from({ length: 6 }, () => Math.floor(Math.random() * 6) + 1);
         //Number testing...
-        // diceResult = [6,2,2,5,2,2];
+        // diceResult = [1,2,2,3,3,3];
+        
         var results = [];
         results = diceResult.join(" ");
         var dieCount = [];
+        
         scoring(diceResult, dieCount);
         $("#result-text").text(results);
         $("#bank-text").text(" " + player.bank);
-
+        
 
     };
 
@@ -211,18 +214,27 @@ $(document).ready(function () {
         // ^^ Pyramid
         if (dieCount[0] == 1 && dieCount[1] == 2 && dieCount[2] == 3) {
             player.bank += 3500;
+            $("#message-text").text("You rolled a Pyramid!");
+            $("#message-text").addClass("big-dog");
+           
         }
         // ^^ Straight
         else if (dieCount[0] == 1 && dieCount[1] == 1 && dieCount[2] == 1 && dieCount[3] == 1 && dieCount[4] == 1 && dieCount[5] == 1) {
             player.bank += 4000;
+            $("#message-text").text("You rolled a Straight!");
+            $("#message-text").addClass("big-dog");
         }
         // ^^ 3 Pairs
         else if (threePairs[0] == "Valid" && threePairs[1] == "Valid" && threePairs[2] == "Valid") {
             player.bank += 3000;
+            $("#message-text").text("You rolled Three Pairs!");
+            $("#message-text").addClass("big-dog");
         }
         // ^^ 3 Pairs w 4 of a kind and 1 pair
         else if (onePair == true && ((dieCount[0] == 4) || (dieCount[1] == 4) || (dieCount[2] == 4) || (dieCount[3] == 4) || (dieCount[4] == 4) || (dieCount[5] == 4))) {
             player.bank += 3000;
+            $("#message-text").text("You rolled Three Pairs!");
+            $("#message-text").addClass("big-dog");
         }
 
         else {
@@ -240,14 +252,18 @@ $(document).ready(function () {
             }
             if (dieCount[0] == 4) {
                 player.bank += 2500;
-
+                $("#message-text").text("You rolled !");
+                $("#message-text").addClass("big-dog");
             }
             if (dieCount[0] == 5) {
                 player.bank += 5000;
-
+                $("#message-text").text("You rolled !");
+                $("#message-text").addClass("big-dog");
             }
             if (dieCount[0] == 6) {
                 player.bank += 10000;
+                $("#message-text").text("You rolled !");
+            $("#message-text").addClass("big-dog");
             }
 
 
@@ -257,14 +273,18 @@ $(document).ready(function () {
             }
             if (dieCount[1] == 4) {
                 player.bank += 2000;
-
+                $("#message-text").text("You rolled !");
+                $("#message-text").addClass("big-dog");
             }
             if (dieCount[1] == 5) {
                 player.bank += 5000;
-
+                $("#message-text").text("You rolled !");
+                $("#message-text").addClass("big-dog");
             }
             if (dieCount[1] == 6) {
                 player.bank += 10000;
+                $("#message-text").text("You rolled !");
+            $("#message-text").addClass("big-dog");
             }
 
 
@@ -273,14 +293,20 @@ $(document).ready(function () {
             }
             if (dieCount[2] == 4) {
                 player.bank += 2000;
+                $("#message-text").text("You rolled !");
+            $("#message-text").addClass("big-dog");
 
             }
             if (dieCount[2] == 5) {
                 player.bank += 5000;
+                $("#message-text").text("You rolled !");
+            $("#message-text").addClass("big-dog");
 
             }
             if (dieCount[2] == 6) {
                 player.bank += 10000;
+                $("#message-text").text("You rolled !");
+            $("#message-text").addClass("big-dog");
             }
 
 
@@ -289,19 +315,26 @@ $(document).ready(function () {
             }
             if (dieCount[3] == 4) {
                 player.bank += 2000;
+                $("#message-text").text("You rolled !");
+            $("#message-text").addClass("big-dog");
 
             }
             if (dieCount[3] == 5) {
                 player.bank += 5000;
+                $("#message-text").text("You rolled !");
+            $("#message-text").addClass("big-dog");
 
             }
             if (dieCount[3] == 6) {
                 player.bank += 10000;
+                $("#message-text").text("You rolled !");
+            $("#message-text").addClass("big-dog");
             }
 
 
             if (dieCount[4] == 1) {
                 player.bank += 50;
+                
             }
 
             if (dieCount[4] == 2) {
@@ -312,15 +345,18 @@ $(document).ready(function () {
             }
             if (dieCount[4] == 4) {
                 player.bank += 2000;
-
+                $("#message-text").text("You rolled !");
+                $("#message-text").addClass("big-dog");
             }
             if (dieCount[4] == 5) {
                 player.bank += 5000;
-
+                $("#message-text").text("You rolled !");
+                $("#message-text").addClass("big-dog");
             }
             if (dieCount[4] == 6) {
                 player.bank += 10000;
-
+                $("#message-text").text("You rolled !");
+                $("#message-text").addClass("big-dog");
             }
 
 
@@ -329,14 +365,18 @@ $(document).ready(function () {
             }
             if (dieCount[5] == 4) {
                 player.bank += 2000;
-
+                $("#message-text").text("You rolled !");
+                $("#message-text").addClass("big-dog");
             }
             if (dieCount[5] == 5) {
                 player.bank += 5000;
-
+                $("#message-text").text("You rolled !");
+                $("#message-text").addClass("big-dog");
             }
             if (dieCount[5] == 6) {
                 player.bank += 10000;
+                $("#message-text").text("You rolled !");
+            $("#message-text").addClass("big-dog");
             }
 
 
@@ -361,7 +401,7 @@ $(document).ready(function () {
     //load dice
     function load_dice() {
 
-
+   
 
 
         dice.forEach(function (elem, i) {
@@ -379,6 +419,7 @@ $(document).ready(function () {
 
             $('.clickable').click(function () {
                 $(this).prependTo('#holdArea');
+                // $(this).removeClass('clickable');
 
 
             })
