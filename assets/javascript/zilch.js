@@ -24,12 +24,10 @@ $(document).ready(function () {
 
     //Dice Objects
     
-    var dice = [{
-        result: 0,
-    },
+    var dice = [
 
     {
-        obj: 1,
+        
         value: 0,
         src: "assets/images/D1.gif",
         width: 35,
@@ -38,7 +36,7 @@ $(document).ready(function () {
         clickable: false
     },
     {
-        obj: 2,
+        
         value: 0,
         src: "assets/images/D2.gif",
         width: 35,
@@ -47,7 +45,7 @@ $(document).ready(function () {
         clickable: false
     },
     {
-        obj: 3,
+        
         value: 0,
         src: "assets/images/D3.gif",
         width: 35,
@@ -56,7 +54,7 @@ $(document).ready(function () {
         clickable: false
     },
     {
-        obj: 4,
+        
         value: 0,
         src: "assets/images/D4.gif",
         width: 35,
@@ -65,7 +63,7 @@ $(document).ready(function () {
         clickable: false
     },
     {
-        obj: 5,
+        
         value: 0,
         src: "assets/images/D5.gif",
         width: 35,
@@ -74,7 +72,7 @@ $(document).ready(function () {
         clickable: false
     },
     {
-        obj: 6,
+        
         value: 0,
         src: "assets/images/D6.gif",
         width: 35,
@@ -82,9 +80,19 @@ $(document).ready(function () {
         inholdArea: false,
         clickable: false
     },
-
+    // {
+        
+    //     value: 0,
+    //     src: "assets/images/D6.gif",
+    //     width: 35,
+    //     height: 35,
+    //     inholdArea: false,
+    //     clickable: false
+    // },
 
     ];
+
+    console.log(dice[1].value);
 
     //Functions
     //======================================================================
@@ -118,7 +126,15 @@ $(document).ready(function () {
         var diceResult = Array.from({ length: 6 }, () => Math.floor(Math.random() * 6) + 1);
         //Number testing...
         // diceResult = [1,2,2,3,3,3];
-        
+        // console.log(diceResult);
+        // console.log(diceResult[0]);
+        // console.log(dice.value);
+        for(i=0; i<diceResult.length; i++){
+            dice[i].value = diceResult[i];
+            dice[i].src = "assets/images/D" + dice[i].value + ".gif";
+            
+        }
+        // dice.src = "assets/images/D" + toString(dice[2].value) + ".gif";
         var results = [];
         results = diceResult.join(" ");
         var dieCount = [];
@@ -252,17 +268,17 @@ $(document).ready(function () {
             }
             if (dieCount[0] == 4) {
                 player.bank += 2500;
-                $("#message-text").text("You rolled !");
+                $("#message-text").text("You rolled Four of a Kind!");
                 $("#message-text").addClass("big-dog");
             }
             if (dieCount[0] == 5) {
                 player.bank += 5000;
-                $("#message-text").text("You rolled !");
+                $("#message-text").text("You rolled Five of a Kind!");
                 $("#message-text").addClass("big-dog");
             }
             if (dieCount[0] == 6) {
                 player.bank += 10000;
-                $("#message-text").text("You rolled !");
+                $("#message-text").text("You rolled Six of a Kind!");
             $("#message-text").addClass("big-dog");
             }
 
@@ -273,17 +289,17 @@ $(document).ready(function () {
             }
             if (dieCount[1] == 4) {
                 player.bank += 2000;
-                $("#message-text").text("You rolled !");
+                $("#message-text").text("You rolled Four of a Kind!");
                 $("#message-text").addClass("big-dog");
             }
             if (dieCount[1] == 5) {
                 player.bank += 5000;
-                $("#message-text").text("You rolled !");
+                $("#message-text").text("You rolled Five of a Kind!");
                 $("#message-text").addClass("big-dog");
             }
             if (dieCount[1] == 6) {
                 player.bank += 10000;
-                $("#message-text").text("You rolled !");
+                $("#message-text").text("You rolled Six of a Kind!");
             $("#message-text").addClass("big-dog");
             }
 
@@ -293,19 +309,19 @@ $(document).ready(function () {
             }
             if (dieCount[2] == 4) {
                 player.bank += 2000;
-                $("#message-text").text("You rolled !");
+                $("#message-text").text("You rolled Four of a Kind!");
             $("#message-text").addClass("big-dog");
 
             }
             if (dieCount[2] == 5) {
                 player.bank += 5000;
-                $("#message-text").text("You rolled !");
+                $("#message-text").text("You rolled Five of a Kind!");
             $("#message-text").addClass("big-dog");
 
             }
             if (dieCount[2] == 6) {
                 player.bank += 10000;
-                $("#message-text").text("You rolled !");
+                $("#message-text").text("You rolled Six of a Kind!");
             $("#message-text").addClass("big-dog");
             }
 
@@ -315,19 +331,19 @@ $(document).ready(function () {
             }
             if (dieCount[3] == 4) {
                 player.bank += 2000;
-                $("#message-text").text("You rolled !");
+                $("#message-text").text("You rolled Four of a Kind!");
             $("#message-text").addClass("big-dog");
 
             }
             if (dieCount[3] == 5) {
                 player.bank += 5000;
-                $("#message-text").text("You rolled !");
+                $("#message-text").text("You rolled Five of a Kind!");
             $("#message-text").addClass("big-dog");
 
             }
             if (dieCount[3] == 6) {
                 player.bank += 10000;
-                $("#message-text").text("You rolled !");
+                $("#message-text").text("You rolled Six of a Kind!");
             $("#message-text").addClass("big-dog");
             }
 
@@ -345,17 +361,17 @@ $(document).ready(function () {
             }
             if (dieCount[4] == 4) {
                 player.bank += 2000;
-                $("#message-text").text("You rolled !");
+                $("#message-text").text("You rolled Four of a Kind!");
                 $("#message-text").addClass("big-dog");
             }
             if (dieCount[4] == 5) {
                 player.bank += 5000;
-                $("#message-text").text("You rolled !");
+                $("#message-text").text("You rolled Five of a Kind!");
                 $("#message-text").addClass("big-dog");
             }
             if (dieCount[4] == 6) {
                 player.bank += 10000;
-                $("#message-text").text("You rolled !");
+                $("#message-text").text("You rolled Six of a Kind!");
                 $("#message-text").addClass("big-dog");
             }
 
@@ -365,17 +381,17 @@ $(document).ready(function () {
             }
             if (dieCount[5] == 4) {
                 player.bank += 2000;
-                $("#message-text").text("You rolled !");
+                $("#message-text").text("You rolled Four of a Kind!");
                 $("#message-text").addClass("big-dog");
             }
             if (dieCount[5] == 5) {
                 player.bank += 5000;
-                $("#message-text").text("You rolled !");
+                $("#message-text").text("You rolled Five of a Kind!");
                 $("#message-text").addClass("big-dog");
             }
             if (dieCount[5] == 6) {
                 player.bank += 10000;
-                $("#message-text").text("You rolled !");
+                $("#message-text").text("You rolled Six of a Kind!");
             $("#message-text").addClass("big-dog");
             }
 
@@ -401,11 +417,9 @@ $(document).ready(function () {
     //load dice
     function load_dice() {
 
-   
-
 
         dice.forEach(function (elem, i) {
-
+            $("#img"+ i).empty();
 
             //Loads the dice images
             diceImg = $("<img>");
@@ -419,6 +433,7 @@ $(document).ready(function () {
 
             $('.clickable').click(function () {
                 $(this).prependTo('#holdArea');
+
                 // $(this).removeClass('clickable');
 
 
