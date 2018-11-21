@@ -10,7 +10,7 @@ $(document).ready(function () {
     var totalgames = 0;
 
     // Player Object
-    var player = {
+    var player = [{
         pnum: "",
         name: "player1",
         isTurn: false,
@@ -19,11 +19,10 @@ $(document).ready(function () {
         losses: 0,
         score: 0,
         bank: 0,
-    };
+    }
+    ];
+    // Dice Objects
 
-
-    //Dice Objects
-    
     var dice = [{
         result: 0,
     },
@@ -85,7 +84,6 @@ $(document).ready(function () {
 
 
     ];
-
     //Functions
     //======================================================================
 
@@ -98,7 +96,6 @@ $(document).ready(function () {
         var round = 1;
         $("#round-text").text(round);
         var rollcount = 0;
-        var diceResult = [];
         var holdArea = [];
         var dieCount = [];
         // Roll Button click handler
@@ -113,14 +110,13 @@ $(document).ready(function () {
 
     //Roll the dice!
     function rolldice(rolldice) {
-        var diceResult = [];
-        var diceResult = Array.from({ length: 6 }, () => Math.floor(Math.random() * 6) + 1);
+        dice.result = Array.from({ length: 6 }, () => Math.floor(Math.random() * 6) + 1);
         //Number testing...
-        // diceResult = [6,2,2,5,2,2];
+        // dice.result = [6,2,2,5,2,2];
         var results = [];
-        results = diceResult.join(" ");
+        results = dice.result.join(" ");
         var dieCount = [];
-        scoring(diceResult, dieCount);
+        scoring(dice.result, dieCount);
         $("#result-text").text(results);
         $("#bank-text").text(" " + player.bank);
 
@@ -134,20 +130,17 @@ $(document).ready(function () {
 
 
     //Scoring
-    function scoring(diceResult, threePairs) {
+    function scoring(threePairs) {
         load_dice();
-        countDice(diceResult);
-        // threePair(dieCount, updateBank);
+        countDice();
         updateBank(dieCount, threePairs);
-
-
 
         console.log("Player Bank" + " " + player.bank);
     }
 
     //Count how many dice of each number you got
     //========
-    function countDice(diceResult) {
+    function countDice() {
         var count1 = 0;
         var count2 = 0;
         var count3 = 0;
@@ -155,31 +148,31 @@ $(document).ready(function () {
         var count5 = 0;
         var count6 = 0;
 
-        console.log(diceResult);
-        for (j = 0; j < diceResult.length; j++) {
-            if (diceResult[j] == 1)
+        console.log(dice.result);
+        for (j = 0; j < dice.result.length; j++) {
+            if (dice.result[j] == 1)
                 count1++;
 
 
 
-            if (diceResult[j] == 2)
+            if (dice.result[j] == 2)
                 count2++;
 
 
-            if (diceResult[j] == 3)
+            if (dice.result[j] == 3)
                 count3++;
 
 
-            if (diceResult[j] == 4)
+            if (dice.result[j] == 4)
                 count4++;
 
 
-            if (diceResult[j] == 5)
+            if (dice.result[j] == 5)
                 count5++;
 
 
 
-            if (diceResult[j] == 6)
+            if (dice.result[j] == 6)
                 count6++;
         };
         dieCount = [count1, count2, count3, count4, count5, count6];
@@ -341,7 +334,7 @@ $(document).ready(function () {
 
 
             if (player.bank == 0) {
-                // alert(Zilch);
+
 
                 $('#myModal').modal('show');
 
@@ -357,16 +350,19 @@ $(document).ready(function () {
     }
 
 
-
     //load dice
     function load_dice() {
-
-
+        // dice.result.forEach(function(elem) {
+        //     console.log(elem);
+        //     dice.value.push(elem);
+        //     console.log(dice.value);
+        //   });
 
 
         dice.forEach(function (elem, i) {
 
-
+           
+           
             //Loads the dice images
             diceImg = $("<img>");
             diceImg.addClass("img-fluid clickable");
@@ -374,7 +370,7 @@ $(document).ready(function () {
             diceImg.attr("width", elem.width);
             diceImg.attr("height", elem.height);
             $("#img" + i).append(diceImg);
-
+           
 
 
             $('.clickable').click(function () {
@@ -384,15 +380,12 @@ $(document).ready(function () {
             })
 
 
-
-
-
         });
+
         console.log(dice);
+
+
     };
-
-
-
 
     //Check if won
 
