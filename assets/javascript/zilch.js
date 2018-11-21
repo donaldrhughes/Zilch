@@ -5,7 +5,7 @@ $(document).ready(function () {
 
     // Declare Global Vars
     //================================================
-
+    var rollcount = 0;
     var Zilch = "Zilch!";
     var totalgames = 0;
 
@@ -23,74 +23,74 @@ $(document).ready(function () {
 
 
     //Dice Objects
-    
+
     var dice = [
 
-    {
-        
-        value: 0,
-        src: "assets/images/D1.gif",
-        width: 35,
-        height: 35,
-        inholdArea: false,
-        clickable: false
-    },
-    {
-        
-        value: 0,
-        src: "assets/images/D2.gif",
-        width: 35,
-        height: 35,
-        inholdArea: false,
-        clickable: false
-    },
-    {
-        
-        value: 0,
-        src: "assets/images/D3.gif",
-        width: 35,
-        height: 35,
-        inholdArea: false,
-        clickable: false
-    },
-    {
-        
-        value: 0,
-        src: "assets/images/D4.gif",
-        width: 35,
-        height: 35,
-        inholdArea: false,
-        clickable: false
-    },
-    {
-        
-        value: 0,
-        src: "assets/images/D5.gif",
-        width: 35,
-        height: 35,
-        inholdArea: false,
-        clickable: false
-    },
-    {
-        
-        value: 0,
-        src: "assets/images/D6.gif",
-        width: 35,
-        height: 35,
-        inholdArea: false,
-        clickable: false
-    },
-    // {
-        
-    //     value: 0,
-    //     src: "assets/images/D6.gif",
-    //     width: 35,
-    //     height: 35,
-    //     inholdArea: false,
-    //     clickable: false
-    // },
+        {
+
+            value: 0,
+            src: "assets/images/D1.jpg",
+            width: 35,
+            height: 35,
+            inholdArea: false,
+            clickable: false
+        },
+        {
+
+            value: 0,
+            src: "assets/images/D2.gif",
+            width: 35,
+            height: 35,
+            inholdArea: false,
+            clickable: false
+        },
+        {
+
+            value: 0,
+            src: "assets/images/D3.jpg",
+            width: 35,
+            height: 35,
+            inholdArea: false,
+            clickable: false
+        },
+        {
+
+            value: 0,
+            src: "assets/images/D4.jpg",
+            width: 35,
+            height: 35,
+            inholdArea: false,
+            clickable: false
+        },
+        {
+
+            value: 0,
+            src: "assets/images/D5.jpg",
+            width: 35,
+            height: 35,
+            inholdArea: false,
+            clickable: false
+        },
+        {
+
+            value: 0,
+            src: "assets/images/D6.jpg",
+            width: 35,
+            height: 35,
+            inholdArea: false,
+            clickable: false
+        },
 
     ];
+
+    //Cup Object
+    var cup =
+    {
+        src: "assets/images/Dicecup.jpg",
+        width: 50,
+        height: 50,
+        clickable: true
+    };
 
     console.log(dice[1].value);
 
@@ -105,10 +105,11 @@ $(document).ready(function () {
         $("#turn-text").text(turn);
         var round = 1;
         $("#round-text").text(round);
-        var rollcount = 0;
+        
         var diceResult = [];
         var holdArea = [];
         var dieCount = [];
+        loadCup();
         // Roll Button click handler
         $("#roll-button").on("click", function () {
             rollcount++;
@@ -116,8 +117,8 @@ $(document).ready(function () {
 
             rolldice();
         })
-    }
 
+    };
 
     //Roll the dice!
     function rolldice(rolldice) {
@@ -129,20 +130,20 @@ $(document).ready(function () {
         // console.log(diceResult);
         // console.log(diceResult[0]);
         // console.log(dice.value);
-        for(i=0; i<diceResult.length; i++){
+        for (i = 0; i < diceResult.length; i++) {
             dice[i].value = diceResult[i];
-            dice[i].src = "assets/images/D" + dice[i].value + ".gif";
-            
+            dice[i].src = "assets/images/D" + dice[i].value + ".jpg";
+
         }
-        // dice.src = "assets/images/D" + toString(dice[2].value) + ".gif";
+
         var results = [];
         results = diceResult.join(" ");
         var dieCount = [];
-        
+
         scoring(diceResult, dieCount);
         $("#result-text").text(results);
         $("#bank-text").text(" " + player.bank);
-        
+
 
     };
 
@@ -232,7 +233,7 @@ $(document).ready(function () {
             player.bank += 3500;
             $("#message-text").text("You rolled a Pyramid!");
             $("#message-text").addClass("big-dog");
-           
+
         }
         // ^^ Straight
         else if (dieCount[0] == 1 && dieCount[1] == 1 && dieCount[2] == 1 && dieCount[3] == 1 && dieCount[4] == 1 && dieCount[5] == 1) {
@@ -279,7 +280,7 @@ $(document).ready(function () {
             if (dieCount[0] == 6) {
                 player.bank += 10000;
                 $("#message-text").text("You rolled Six of a Kind!");
-            $("#message-text").addClass("big-dog");
+                $("#message-text").addClass("big-dog");
             }
 
 
@@ -300,7 +301,7 @@ $(document).ready(function () {
             if (dieCount[1] == 6) {
                 player.bank += 10000;
                 $("#message-text").text("You rolled Six of a Kind!");
-            $("#message-text").addClass("big-dog");
+                $("#message-text").addClass("big-dog");
             }
 
 
@@ -310,19 +311,19 @@ $(document).ready(function () {
             if (dieCount[2] == 4) {
                 player.bank += 2000;
                 $("#message-text").text("You rolled Four of a Kind!");
-            $("#message-text").addClass("big-dog");
+                $("#message-text").addClass("big-dog");
 
             }
             if (dieCount[2] == 5) {
                 player.bank += 5000;
                 $("#message-text").text("You rolled Five of a Kind!");
-            $("#message-text").addClass("big-dog");
+                $("#message-text").addClass("big-dog");
 
             }
             if (dieCount[2] == 6) {
                 player.bank += 10000;
                 $("#message-text").text("You rolled Six of a Kind!");
-            $("#message-text").addClass("big-dog");
+                $("#message-text").addClass("big-dog");
             }
 
 
@@ -332,25 +333,25 @@ $(document).ready(function () {
             if (dieCount[3] == 4) {
                 player.bank += 2000;
                 $("#message-text").text("You rolled Four of a Kind!");
-            $("#message-text").addClass("big-dog");
+                $("#message-text").addClass("big-dog");
 
             }
             if (dieCount[3] == 5) {
                 player.bank += 5000;
                 $("#message-text").text("You rolled Five of a Kind!");
-            $("#message-text").addClass("big-dog");
+                $("#message-text").addClass("big-dog");
 
             }
             if (dieCount[3] == 6) {
                 player.bank += 10000;
                 $("#message-text").text("You rolled Six of a Kind!");
-            $("#message-text").addClass("big-dog");
+                $("#message-text").addClass("big-dog");
             }
 
 
             if (dieCount[4] == 1) {
                 player.bank += 50;
-                
+
             }
 
             if (dieCount[4] == 2) {
@@ -392,7 +393,7 @@ $(document).ready(function () {
             if (dieCount[5] == 6) {
                 player.bank += 10000;
                 $("#message-text").text("You rolled Six of a Kind!");
-            $("#message-text").addClass("big-dog");
+                $("#message-text").addClass("big-dog");
             }
 
 
@@ -419,25 +420,25 @@ $(document).ready(function () {
 
 
         dice.forEach(function (elem, i) {
-            $("#img"+ i).empty();
+            $("#img" + i).empty();
 
             //Loads the dice images
             diceImg = $("<img>");
-            diceImg.addClass("img-fluid clickable");
+            diceImg.addClass("img-fluid clickable m-1 mt-5");
             diceImg.attr("src", elem.src);
             diceImg.attr("width", elem.width);
             diceImg.attr("height", elem.height);
             $("#img" + i).append(diceImg);
 
 
+//Old Roll Btn
+            // $('.clickable').click(function () {
+            //     $(this).prependTo('#holdArea');
 
-            $('.clickable').click(function () {
-                $(this).prependTo('#holdArea');
-
-                // $(this).removeClass('clickable');
+            //     // $(this).removeClass('clickable');
 
 
-            })
+            // })
 
 
 
@@ -447,24 +448,48 @@ $(document).ready(function () {
         console.log(dice);
     };
 
+    //Load Cup
+    function loadCup() {
+       
+            cupImg = $("<img>");
+            cupImg.addClass("img-fluid diceCup");
+            cupImg.attr("src", cup.src);
+            cupImg.attr("width", cup.width);
+            cupImg.attr("height", cup.height);
+            $("#roll-cup").append(cupImg);
 
 
 
-    //Check if won
+            $('.diceCup').click(function () {
+                
+                $("#rollcount-text").text(rollcount);
+                rollcount++;
+                
+                rolldice();
+
+               
 
 
-    //Check if over 10,000
+            })
+        
+
+    };
+
+//Check if won
+
+
+//Check if over 10,000
 
 
 
 
-    //Main Section
-    //===================================================
-    startGame();
+//Main Section
+//===================================================
+startGame();
 
 
 
 
 
 
-})
+    })
