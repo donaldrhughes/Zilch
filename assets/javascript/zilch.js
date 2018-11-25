@@ -8,7 +8,7 @@ $(document).ready(function () {
     var rollcount = 0;
     var Zilch = "Zilch!";
     var totalgames = 0;
-
+    var diceResult = [];
     // Player Object
     var player = {
         pnum: "",
@@ -92,7 +92,7 @@ $(document).ready(function () {
         clickable: true
     };
 
-    console.log(dice[1].value);
+    // console.log(dice[1].value);
 
     //Functions
     //======================================================================
@@ -105,7 +105,7 @@ $(document).ready(function () {
         $("#turn-text").text(turn);
         var round = 1;
         $("#round-text").text(round);
-        
+
         var diceResult = [];
         var holdArea = [];
         var dieCount = [];
@@ -136,11 +136,15 @@ $(document).ready(function () {
 
         }
 
+        //Displays point value in html
         var results = [];
         results = diceResult.join(" ");
         var dieCount = [];
 
+        //run scoring
         scoring(diceResult, dieCount);
+
+        //show results
         $("#result-text").text(results);
         $("#bank-text").text(" " + player.bank);
 
@@ -155,7 +159,7 @@ $(document).ready(function () {
 
     //Scoring
     function scoring(diceResult, threePairs) {
-        load_dice();
+        load_dice(diceResult);
         countDice(diceResult);
         // threePair(dieCount, updateBank);
         updateBank(dieCount, threePairs);
@@ -174,6 +178,14 @@ $(document).ready(function () {
         var count4 = 0;
         var count5 = 0;
         var count6 = 0;
+
+
+        
+
+
+
+
+
 
         console.log(diceResult);
         for (j = 0; j < diceResult.length; j++) {
@@ -255,7 +267,7 @@ $(document).ready(function () {
         }
 
         else {
-            //Remainder of rolls -- 1's 5's 2,3,4,5,6 of a kind
+            //Remainder of rolls -- 1's 5's 3,4,5,6 of a kind
             //====
             if (dieCount[0] == 1) {
                 player.bank += 100;
@@ -431,14 +443,14 @@ $(document).ready(function () {
             $("#img" + i).append(diceImg);
 
 
-//Old Roll Btn
-            // $('.clickable').click(function () {
-            //     $(this).prependTo('#holdArea');
 
-            //     // $(this).removeClass('clickable');
+            $('.clickable').click(function () {
+                $(this).prependTo('#holdArea');
+                countArray(diceResult);
+                // $(this).removeClass('clickable');
 
 
-            // })
+            })
 
 
 
@@ -450,46 +462,67 @@ $(document).ready(function () {
 
     //Load Cup
     function loadCup() {
-       
-            cupImg = $("<img>");
-            cupImg.addClass("img-fluid diceCup");
-            cupImg.attr("src", cup.src);
-            cupImg.attr("width", cup.width);
-            cupImg.attr("height", cup.height);
-            $("#roll-cup").append(cupImg);
+
+        cupImg = $("<img>");
+        cupImg.addClass("img-fluid diceCup");
+        cupImg.attr("src", cup.src);
+        cupImg.attr("width", cup.width);
+        cupImg.attr("height", cup.height);
+        $("#roll-cup").append(cupImg);
 
 
 
-            $('.diceCup').click(function () {
-                
-                $("#rollcount-text").text(rollcount);
-                rollcount++;
-                
-                rolldice();
+        $('.diceCup').click(function () {
 
-               
+            $("#rollcount-text").text(rollcount);
+            rollcount++;
+
+            rolldice();
 
 
-            })
-        
+
+
+        })
+
 
     };
 
-//Check if won
+
+//Count Array
+function countArray(){
+    //how many dice are we rolling
+    var dieTotal = diceResult.length;
+console.log(dieTotal);
+    for (i = 0; i < dieTotal; i++) {
+        
+            if(dieTotal == 6){
+                console.log(dieTotal);
+            }
+            if(dieTotal == 5){
+                console.log(dieTotal);
+                console.log("5 in array");
+            }
+            else{
+                console.log("6 in array");
+            }
+        }
+};
+
+    //Check if won
 
 
-//Check if over 10,000
+    //Check if over 10,000
 
 
 
 
-//Main Section
-//===================================================
-startGame();
+    //Main Section
+    //===================================================
+    startGame();
 
 
 
 
 
 
-    })
+})
