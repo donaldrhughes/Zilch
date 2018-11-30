@@ -448,7 +448,7 @@ $(document).ready(function () {
 
 
 
-            $('.clickable').click(function () {
+            $('.clickable').on("click", function () {
                 $(this).prependTo('#holdArea');
                 countArray(diceResult);
                 // $(this).removeClass('clickable');
@@ -476,7 +476,7 @@ $(document).ready(function () {
 
 
 
-        $('.diceCup').click(function () {
+        $('.diceCup').on("click", function () {
 
             $("#rollcount-text").text(rollcount);
             rollcount++;
