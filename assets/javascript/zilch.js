@@ -132,6 +132,7 @@ $(document).ready(function () {
         // console.log(dice.value);
         var sortResults = diceResult.slice();
         sortResults.sort();
+        var results = sortResults.join(" ");
         console.log(sortResults);
         for (i = 0; i < diceResult.length; i++) {
             dice[i].value = diceResult[i];
@@ -140,15 +141,15 @@ $(document).ready(function () {
         }
 
         //Displays point value in html
-        var results = [];
-        results = diceResult.join(" ");
+        
+        
         var dieCount = [];
 
         //run scoring
         scoring(diceResult, dieCount);
 
         //show results
-        $("#result-text").text(sortResults);
+        $("#result-text").text(results);
         $("#bank-text").text(" " + player.bank);
 
 
