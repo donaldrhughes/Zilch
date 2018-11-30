@@ -5,7 +5,7 @@ $(document).ready(function () {
 
     // Declare Global Vars
     //================================================
-    var rollcount = 0;
+    var rollcount = 1;
     var Zilch = "Zilch!";
     var totalgames = 0;
     var diceResult = [];
@@ -103,26 +103,21 @@ $(document).ready(function () {
     function startGame() {
         var turn = 1;
         player.bank = 0;
-        $("#turn-text").text(turn);
+        $("#turn-text").text("Turn: " + turn);
         var round = 1;
-        $("#round-text").text(round);
+        $("#round-text").text("Round: " + round);
 
         var diceResult = [];
         var holdArea = [];
         var dieCount = [];
-        loadCup();
-        // Roll Button click handler
-        $("#roll-button").on("click", function () {
-            rollcount++;
-            $("#rollcount-text").text(rollcount);
-            rolldice();
-        })
+        
+
 
     };
 
     //Roll the dice!
     function rolldice(rolldice) {
-        
+
         $("#message-text").empty();
         var diceResult = Array.from({ length: 6 }, () => Math.floor(Math.random() * 6) + 1);
         //Number testing...
@@ -141,16 +136,16 @@ $(document).ready(function () {
         }
 
         //Displays point value in html
-        
-        
+
+
         var dieCount = [];
 
         //run scoring
         scoring(diceResult, dieCount);
 
         //show results
-        $("#result-text").text(results);
-        $("#bank-text").text(" " + player.bank);
+        $("#result-text").text("Result: " + results);
+        $("#value-text").text("Value: " + player.bank);
 
 
     };
@@ -184,7 +179,7 @@ $(document).ready(function () {
         var count6 = 0;
 
 
-        
+
 
 
 
@@ -477,8 +472,8 @@ $(document).ready(function () {
 
 
         $('.diceCup').on("click", function () {
-
-            $("#rollcount-text").text(rollcount);
+            startGame();
+            $("#rollcount-text").text("Roll: " + rollcount);
             rollcount++;
 
             rolldice();
@@ -492,25 +487,25 @@ $(document).ready(function () {
     };
 
 
-//Count Array
-function countArray(){
-    //how many dice are we rolling
-    var dieTotal = diceResult.length;
-console.log(dieTotal);
-    for (i = 0; i < dieTotal; i++) {
-        
-            if(dieTotal == 6){
+    //Count Array
+    function countArray() {
+        //how many dice are we rolling
+        var dieTotal = diceResult.length;
+        console.log(dieTotal);
+        for (i = 0; i < dieTotal; i++) {
+
+            if (dieTotal == 6) {
                 console.log(dieTotal);
             }
-            if(dieTotal == 5){
+            if (dieTotal == 5) {
                 console.log(dieTotal);
                 console.log("5 in array");
             }
-            else{
+            else {
                 console.log("6 in array");
             }
         }
-};
+    };
 
     //Check if won
 
@@ -522,7 +517,7 @@ console.log(dieTotal);
 
     //Main Section
     //===================================================
-    startGame();
+    loadCup();
 
 
 

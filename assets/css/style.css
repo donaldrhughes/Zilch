@@ -43,17 +43,11 @@ footer{
     background:#fff;
 
 }
-.diceProps{
-    width:30px;
 
-}
 .big-dog{
     color:blue;
     font-weight:bolder;
 }
 .diceCup{
     background:#333;
-}
-.clickable{
-    float:left;
 }
