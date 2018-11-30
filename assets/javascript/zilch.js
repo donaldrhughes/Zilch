@@ -21,6 +21,7 @@ $(document).ready(function () {
         bank: 0,
     };
 
+    var currentPlayer;
 
     //Dice Objects
 
@@ -30,8 +31,8 @@ $(document).ready(function () {
 
             value: 0,
             src: "assets/images/D1.jpg",
-            width: 35,
-            height: 35,
+            width: 25,
+            height: 25,
             inholdArea: false,
             clickable: false
         },
@@ -39,8 +40,8 @@ $(document).ready(function () {
 
             value: 0,
             src: "assets/images/D2.gif",
-            width: 35,
-            height: 35,
+            width: 25,
+            height: 25,
             inholdArea: false,
             clickable: false
         },
@@ -48,8 +49,8 @@ $(document).ready(function () {
 
             value: 0,
             src: "assets/images/D3.jpg",
-            width: 35,
-            height: 35,
+            width: 25,
+            height: 25,
             inholdArea: false,
             clickable: false
         },
@@ -57,8 +58,8 @@ $(document).ready(function () {
 
             value: 0,
             src: "assets/images/D4.jpg",
-            width: 35,
-            height: 35,
+            width: 25,
+            height: 25,
             inholdArea: false,
             clickable: false
         },
@@ -66,8 +67,8 @@ $(document).ready(function () {
 
             value: 0,
             src: "assets/images/D5.jpg",
-            width: 35,
-            height: 35,
+            width: 25,
+            height: 25,
             inholdArea: false,
             clickable: false
         },
@@ -75,8 +76,8 @@ $(document).ready(function () {
 
             value: 0,
             src: "assets/images/D6.jpg",
-            width: 35,
-            height: 35,
+            width: 25,
+            height: 25,
             inholdArea: false,
             clickable: false
         },
@@ -123,13 +124,15 @@ $(document).ready(function () {
     //Roll the dice!
     function rolldice(rolldice) {
         $("#message-text").empty();
-        var diceResult = [];
         var diceResult = Array.from({ length: 6 }, () => Math.floor(Math.random() * 6) + 1);
         //Number testing...
         // diceResult = [1,2,2,3,3,3];
         // console.log(diceResult);
         // console.log(diceResult[0]);
         // console.log(dice.value);
+        var sortResults = diceResult.slice();
+        sortResults.sort();
+        console.log(sortResults);
         for (i = 0; i < diceResult.length; i++) {
             dice[i].value = diceResult[i];
             dice[i].src = "assets/images/D" + dice[i].value + ".jpg";
@@ -145,7 +148,7 @@ $(document).ready(function () {
         scoring(diceResult, dieCount);
 
         //show results
-        $("#result-text").text(results);
+        $("#result-text").text(sortResults);
         $("#bank-text").text(" " + player.bank);
 
 
