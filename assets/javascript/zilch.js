@@ -115,7 +115,6 @@ $(document).ready(function () {
         $("#roll-button").on("click", function () {
             rollcount++;
             $("#rollcount-text").text(rollcount);
-
             rolldice();
         })
 
@@ -123,6 +122,7 @@ $(document).ready(function () {
 
     //Roll the dice!
     function rolldice(rolldice) {
+        
         $("#message-text").empty();
         var diceResult = Array.from({ length: 6 }, () => Math.floor(Math.random() * 6) + 1);
         //Number testing...
@@ -440,7 +440,7 @@ $(document).ready(function () {
 
             //Loads the dice images
             diceImg = $("<img>");
-            diceImg.addClass("img-fluid clickable m-1 mt-5");
+            diceImg.addClass("img-fluid m-1 mt-2 float-left");
             diceImg.attr("src", elem.src);
             diceImg.attr("width", elem.width);
             diceImg.attr("height", elem.height);
@@ -448,8 +448,8 @@ $(document).ready(function () {
 
 
 
-            $('.clickable').on("click", function () {
-                $(this).prependTo('#holdArea');
+            $("#img" + i).on("click", function () {
+                $("#img" + i).prependTo('#holdArea');
                 countArray(diceResult);
                 // $(this).removeClass('clickable');
 

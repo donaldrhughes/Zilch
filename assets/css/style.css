@@ -54,3 +54,6 @@ footer{
 .diceCup{
     background:#333;
 }
+.clickable{
+    float:left;
+}
