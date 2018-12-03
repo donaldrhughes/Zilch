@@ -435,7 +435,7 @@ $(document).ready(function () {
 
             //Loads the dice images
             diceImg = $("<img>");
-            diceImg.addClass("img-fluid m-1 mt-2 float-left");
+            diceImg.addClass("img-fluid m-1 border");
             diceImg.attr("src", elem.src);
             diceImg.attr("width", elem.width);
             diceImg.attr("height", elem.height);
