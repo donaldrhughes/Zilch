@@ -144,7 +144,7 @@ $(document).ready(function () {
         scoring(diceResult, dieCount);
 
         //show results
-        $("#result-text").text("Result: " + results);
+        $("#result-text").text(results);
         $("#value-text").text("Value: " + player.bank);
 
 
