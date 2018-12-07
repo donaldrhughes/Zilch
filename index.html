@@ -31,73 +31,91 @@
     <div class="container-fluid w-100 h-100 m-0">
         <!-- Begin 1st Row -->
         <div class="row row-justify-content-start h-100 m-0">
-            
-         <div class="col">    
+            <!-- container col -->
+            <div id="col" class="col col-contain">
                 <!-- Card Goes Here -->
-                
+
                 <img class="card card-img-top m-0" src="./assets/images/Zilchtable.jpg" alt="-Zilch Table-">
                 <!-- Main Board Text Overlay Starts Here -->
                 <div class="card-img-overlay">
-                       
-                        <!-- Player 3, --> Player3
-                    <!-- Dice Area contain !needs margins changed for screen size-->
-                   
-                    <div class="col">
+                    <div class="row">
 
-                        <!-- Player 1 , Dice Sort, Points, Message, Player 2 -->
-                        <img src="./assets/images/avatar1.png" class="img img-fluid">
-                        <img src="./assets/images/avatar2.png" class="img img-fluid">
-                        <img src="./assets/images/avatar3.png" class="img img-fluid">
-                        <img src="./assets/images/avatar4.png" class="img img-fluid">
-                        <img src="./assets/images/avatar5.png" class="img img-fluid">
-                        <img src="./assets/images/avatar6.png" class="img img-fluid">
+                        <!-- First Col -->
+                        <div class="col">
+                            <div class="player3" id="player3">
+                                <!-- Player 3, --> Player3 <img src="./assets/images/avatar3.png" class="img img-fluid">
+                            </div>
 
-                        <div id="roll-cup" class="rollCup"></div>
-                    </div>
-                    <div class="col">
-                            <div class="dice-area m-2 mt-3">
+                        </div>
 
-                                </div>
-                        <span id="turn-text"></span>
-                        <span id="result-text"> -Dice Sort-</span>
-                        <span id="round-text">
-                            <div id="value-text"></div>
-                            <span id="message-text"></span>
-                            <!-- *Card-text !Important - Shows the Dice-->
-                            <div class="card-text "></div>
-                            <div id="img0" class="float-left"></div>
-                            <div id="img1" class="float-left"></div>
-                            <div id="img2" class="float-left"></div>
-                            <div id="img3" class="float-left"></div>
-                            <div id="img4" class="float-left"></div>
-                            <div id="img5" class="float-left"></div>
-                    </div>
-                    <!-- Hold Area-->
-                    <div id="holdArea" class="holdArea">
-                    </div>
-                    <div class="col">
-                        -Player2-
-                        <!-- Player 5,-->Player5
+                        <div id="col2" class="col ">
 
-                    </div>
-                    <div class="col">
-                        Player4
-                    </div>
+                            <!-- Player 1 -->
+                            <div class="player1" id="player1">
+                                Player1
+                                <img src="./assets/images/avatar1.png" class="img img-fluid">
+                            </div>
+                            <!-- ,  Player 5 -->
+                            <div class="player5" id="player5">
+                                Player5<img src="./assets/images/avatar5.png" class="img img-fluid">
+                            </div>
+                        </div>
+                        <div id="col3" class="col">
+                            <!-- Dice Sort, Points, Message, -->
 
 
-                    <!-- Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore maxime neque 
+                            <!-- Dice Area contain !needs margins changed for screen size -->
+                            <div class="dice-area m-2 mt-3"></div>
+                            <div id="roll-cup" class="rollCup"></div>
+                            <span id="turn-text"></span>
+                            <span id="result-text"> -Dice Sort-</span>
+                            <span id="round-text"></span>
+                                <div id="value-text"></div>
+                                <span id="message-text"></span>
+                                <!-- *Card-text !Important - Shows the Dice-->
+                                <div class="card-text "></div>
+                                <div id="img0" class="float-left"></div>
+                                <div id="img1" class="float-left"></div>
+                                <div id="img2" class="float-left"></div>
+                                <div id="img3" class="float-left"></div>
+                                <div id="img4" class="float-left"></div>
+                                <div id="img5" class="float-left"></div>
+                        </div>
+
+
+                        <!-- Hold Area-->
+                        <div id="holdArea" class="holdArea">
+                        </div>
+                        <div id="col4" class="col">
+                                <!-- Player 2 s -->
+                            <div class="player2" id="player2">
+                                -Player2-<img src="./assets/images/avatar2.png" class="img img-fluid"></div>
+
+                            <!-- Player 6,-->
+                            <div class="player6" id="player6">Player6
+                                <img src="./assets/images/avatar6.png" class="img img-fluid">
+                            </div>
+                        </div>
+                        <div id="col5" class="col">
+                            <div class="player4" id="player4">Player4
+                                <img src="./assets/images/avatar4.png" class="img img-fluid"></div>
+
+                        </div>
+
+
+                        <!-- Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore maxime neque 
         exercitationem esse enim atque dolor ex explicabo tempore, unde harum quas nostrum ipsa facere 
         quia, quasi assumenda vero adipisci? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore maxime neque 
         exercitationem esse enim atque dol -->
 
 
+                        <!-- Overlay End Below-->
 
 
 
- <!-- Overlay End Below-->
+                    </div>
+                    <!-- container col end below -->
                 </div>
-<!-- First Col -->
-               
             </div>
 
             <!-- 1st Row Main 100w 100h Below -->

@@ -88,8 +88,8 @@ $(document).ready(function () {
     var cup =
     {
         src: "assets/images/Dicecup.png",
-        width: 50,
-        height: 50,
+        width: 125,
+        height: 125,
         clickable: true
     };
 
