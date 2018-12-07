@@ -5,11 +5,106 @@ $(document).ready(function () {
 
     // Declare Global Vars
     //================================================
+    var numPlayers = 1;
     var rollcount = 1;
     var Zilch = "Zilch!";
     var totalgames = 0;
     var diceResult = [];
-    // Player Object
+
+    // Player Objects
+    var players = [{
+        pnum: "1",
+        name: "player1",
+        isTurn: false,
+        onBoard: false,
+        wins: 0,
+        losses: 0,
+        score: 0,
+        bank: 0,
+        src: "assets/images/avatar1.png",
+        width: 50,
+        height: 50,
+        clickable: false
+
+    },
+    {
+        pnum: "2",
+        name: "player2",
+        isTurn: false,
+        onBoard: false,
+        wins: 0,
+        losses: 0,
+        score: 0,
+        bank: 0,
+        src: "assets/images/avatar2.png",
+        width: 50,
+        height: 50,
+        clickable: false
+
+    },
+    {
+        pnum: "3",
+        name: "player3",
+        isTurn: false,
+        onBoard: false,
+        wins: 0,
+        losses: 0,
+        score: 0,
+        bank: 0,
+        src: "assets/images/avatar3.png",
+        width: 50,
+        height: 50,
+        clickable: false
+
+    },
+    {
+        pnum: "4",
+        name: "player4",
+        isTurn: false,
+        onBoard: false,
+        wins: 0,
+        losses: 0,
+        score: 0,
+        bank: 0,
+        src: "assets/images/avatar4.png",
+        width: 50,
+        height: 50,
+        clickable: false
+
+    },
+    {
+        pnum: "5",
+        name: "player5",
+        isTurn: false,
+        onBoard: false,
+        wins: 0,
+        losses: 0,
+        score: 0,
+        bank: 0,
+        src: "assets/images/avatar5.png",
+        width: 50,
+        height: 50,
+        clickable: false
+
+    },
+    {
+        pnum: "6",
+        name: "player6",
+        isTurn: false,
+        onBoard: false,
+        wins: 0,
+        losses: 0,
+        score: 0,
+        bank: 0,
+        src: "assets/images/avatar6.png",
+        width: 50,
+        height: 50,
+        clickable: false
+
+    }
+    ];
+
+
     var player = {
         pnum: "",
         name: "player1",
@@ -80,7 +175,7 @@ $(document).ready(function () {
             height: 25,
             inholdArea: false,
             clickable: false
-        },
+        }
 
     ];
 
@@ -110,7 +205,7 @@ $(document).ready(function () {
         var diceResult = [];
         var holdArea = [];
         var dieCount = [];
-        
+
 
 
     };
@@ -443,7 +538,7 @@ $(document).ready(function () {
 
 
 
-            $("#img" + i).on("click", function () {
+            diceImg.on("click", function () {
                 $("#img" + i).prependTo('#holdArea');
                 countArray(diceResult);
                 // $(this).removeClass('clickable');
@@ -471,7 +566,7 @@ $(document).ready(function () {
 
 
 
-        $('.diceCup').on("click", function () {
+        cupImg.on("click", function () {
             startGame();
             $("#rollcount-text").text("Roll: " + rollcount);
             rollcount++;
@@ -485,6 +580,34 @@ $(document).ready(function () {
 
 
     };
+
+    function load_players() {
+
+        players.forEach(function (elem, i) {
+            //emptys the player images and data
+            $("#player" + (i+1)).empty();
+           
+            //Loads the player images
+            playerImg = $("<img>");
+            playerImg.addClass("img-fluid m-1 border");
+            playerImg.attr("src", elem.src);
+            playerImg.attr("width", elem.width);
+            playerImg.attr("height", elem.height);
+            playerImg.text(elem.name);
+            $("#player" + (i+1)).append(playerImg);
+
+
+            //loads the player data
+            playerData = $("<div>");
+            playerData.attr("score", elem.score);
+        })
+
+
+    };
+
+
+
+
 
 
     //Count Array
@@ -518,7 +641,7 @@ $(document).ready(function () {
     //Main Section
     //===================================================
     loadCup();
-
+    load_players();
 
 
 
