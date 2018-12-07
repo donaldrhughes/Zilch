@@ -87,7 +87,7 @@ $(document).ready(function () {
     //Cup Object
     var cup =
     {
-        src: "assets/images/Dicecup.jpg",
+        src: "assets/images/Dicecup.png",
         width: 50,
         height: 50,
         clickable: true
