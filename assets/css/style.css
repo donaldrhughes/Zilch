@@ -2,7 +2,7 @@ body{
     font-family: 'Roboto', sans-serif;
     font-family: 'Open Sans', sans-serif;
     text-align:center;
-    color:#ddd;
+    color:#eee;
     font-size:14px;
 }
 /* .main-bg{
@@ -102,4 +102,15 @@ footer{
     height:40%;
     margin-top: 50%;
     margin-left:2%;
+}
+.dice{
+    margin:1px;
+}
+.text-color:{
+    color:#eee;
+}
+.res{
+    font-size:22px;
+    font-weight: bold;
+    margin:0px;
 }

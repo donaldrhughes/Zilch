@@ -53,13 +53,13 @@
     <div class="container-fluid w-100 h-100 m-0">
         <!-- Begin 1st Row -->
         <div class="row row-justify-content-start h-100 m-0">
-            <!-- container col -->
-            <div id="col" class="col-xs-12 col-contain">
-                <!-- Card Goes Here -->
+            <!-- Card Goes Here -->
+            <img class="img-responsive card card-img-top m-0 table" src="./assets/images/Zilchtable.png" alt="-Zilch Table-">
+            <!-- Main Board Text Overlay Starts Here -->
+            <div class="card-img-overlay">
 
-                <img class="img-responsive card card-img-top m-0 table" src="./assets/images/Zilchtable.png" alt="-Zilch Table-">
-                <!-- Main Board Text Overlay Starts Here -->
-                <div class="card-img-overlay">
+                <!-- Main Game Col Container (Inside Overlay) -->
+                <div id="col" class="col-xs-12 col-contain">
 
                     <!-- Main Game Row (Inside Overlay) -->
                     <div class="row">
@@ -70,7 +70,7 @@
 
 
                             <div class="row rh">
-                                <div class="col">c1</div>
+                                <div class="col"></div>
                             </div>
                             <div class="row rh">
                                 <div class="col">
@@ -78,7 +78,7 @@
                                 </div>
                             </div>
                             <div class="row rh">
-                                <div class="col">c3</div>
+                                <div class="col"></div>
                             </div>
 
 
@@ -101,7 +101,7 @@
                                 </div>
                             </div>
                             <div class="row rh">
-                                <div class="col">c2</div>
+                                <div class="col"></div>
                             </div>
                             <div class="row rh">
                                 <div class="col">
@@ -130,22 +130,22 @@
                             <div class="row">
                                 <div class="col">
                                     <div id="roll-cup" class="rollCup"></div>
-                               
+
 
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col">
-     <!-- Dice Area contain !needs margins changed for screen size -->
-     <div class="dice-area">
+                                    <!-- Dice Area contain !needs margins changed for screen size -->
+                                    <div class="dice-area">
 
-            <div id="img0" class="float-left"></div>
-            <div id="img1" class="float-left"></div>
-            <div id="img2" class="float-left"></div>
-            <div id="img3" class="float-left"></div>
-            <div id="img4" class="float-left"></div>
-            <div id="img5" class="float-left"></div>
-        </div>
+                                        <div id="img0" class="float-left"></div>
+                                        <div id="img1" class="float-left"></div>
+                                        <div id="img2" class="float-left"></div>
+                                        <div id="img3" class="float-left"></div>
+                                        <div id="img4" class="float-left"></div>
+                                        <div id="img5" class="float-left"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -166,11 +166,11 @@
                                 </div>
                             </div>
                             <div class="row rh">
-                                <div class="col">c2</div>
+                                <div class="col"></div>
                             </div>
                             <div class="row rh">
                                 <div class="col">
-                                    <div class="player6" id="player6">Player6</div>
+                                    <div class="player6" id="player6"></div>
                                 </div>
                             </div>
                         </div>
@@ -181,7 +181,7 @@
                         <div id="col5" class="col">
 
                             <div class="row rh">
-                                <div class="col">c1</div>
+                                <div class="col"></div>
                             </div>
                             <div class="row rh">
                                 <div class="col">
@@ -190,7 +190,7 @@
                                 </div>
                             </div>
                             <div class="row rh">
-                                <div class="col">c3</div>
+                                <div class="col"></div>
                             </div>
                         </div>
 
@@ -199,50 +199,57 @@
                     </div>
 
 
-                    <!-- Second Game Row -->
-                    <div class="row">
-                        <div class="col">
-                            <!-- Dice Sort -->
-                            <p><span id="result-text"></span></p>
+
+
+                    <div class="text-color">
+                        <!-- Second Game Row -->
+                        <div class="row">
+                            <div class="col">
+                                <!-- Dice Sort -->
+                                <div id="result-text" class="res"></div>
+                            </div>
+
+
+
+                           
+                            <div class="col">
+                                <!-- Points  -->
+                                <div id="value-text"></div>
+
+
+                            </div>
+                          
+
                         </div>
+                        <div class="row">
+                            <div class="col">
+                                <!-- Hold Area-->
 
-                        <div class="col">
-
-                        </div>
-
-                        <div class="col">
-                            <!-- Hold Area-->
-                            <p>
                                 <div id="holdArea" class="holdArea"></div>
-                            </p>
+
+                            </div>
+  <!-- Message, -->
+  <div class="col">
+        <div id="message-text"></div>
+    </div> <div class="col"><span id="turn-text"></span></div>
+    <div class="col"><span id="round-text"></span></div>
                         </div>
-                        <div class="col">
-                            <!-- Message, -->
-                            <span id="message-text"></span></div>
                     </div>
 
 
-                    <div class="row">
-                        <div class="col"></div>
-                    </div>
 
 
-                    <div class="row">
-                        <div class="col"><span id="turn-text"></span></div>
-                        <div class="col"><span id="round-text"></span></div>
-                        <div class="col">
-                            <!-- Points  -->
-                            <div id="value-text"></div>
-                        </div>
-
-                    </div>
-
-                    <!-- Overlay End Below-->
 
                 </div>
-                <!-- container col end below -->
+                <!-- Overlay End Below-->
+
 
             </div>
+            <!-- container col end below -->
+
+
+
+
 
             <!-- 1st Row Main 100w 100h Below -->
         </div>
