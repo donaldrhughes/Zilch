@@ -8,6 +8,8 @@ body{
 img{
    min-width: 15px;
    min-height:15px;
+   max-width: 100%;
+   max-height: 100%;
   
     
 }
