@@ -1,4 +1,3 @@
-// Wait until browser loads fully
 $(document).ready(function () {
 
 
@@ -10,6 +9,7 @@ $(document).ready(function () {
     var Zilch = "Zilch!";
     var totalgames = 0;
     var diceResult = [];
+    var database;
 
     // Player Objects
     var players = [{
@@ -215,6 +215,8 @@ $(document).ready(function () {
 
         $("#message-text").empty();
         var diceResult = Array.from({ length: 6 }, () => Math.floor(Math.random() * 6) + 1);
+        console.log(database);
+   
         //Number testing...
         // diceResult = [1,2,2,3,3,3];
         // console.log(diceResult);
@@ -223,6 +225,11 @@ $(document).ready(function () {
         var sortResults = diceResult.slice();
         sortResults.sort();
         var results = sortResults.join(" ");
+        database.ref().set({
+            sort: results,
+            csvSort: diceResult
+
+        });
         console.log(sortResults);
         for (i = 0; i < diceResult.length; i++) {
             dice[i].value = diceResult[i];
@@ -255,10 +262,7 @@ $(document).ready(function () {
     function scoring(diceResult, threePairs) {
         load_dice(diceResult);
         countDice(diceResult);
-        // threePair(dieCount, updateBank);
         updateBank(dieCount, threePairs);
-
-
 
         console.log("Player Bank" + " " + player.bank);
     }
@@ -272,11 +276,6 @@ $(document).ready(function () {
         var count4 = 0;
         var count5 = 0;
         var count6 = 0;
-
-
-
-
-
 
 
 
@@ -541,8 +540,6 @@ $(document).ready(function () {
             diceImg.on("click", function () {
                 $("#img" + i).prependTo('#holdArea');
                 countArray(diceResult);
-                // $(this).removeClass('clickable');
-
 
             })
 
@@ -570,11 +567,7 @@ $(document).ready(function () {
             startGame();
             $("#rollcount-text").text("Roll: " + rollcount);
             rollcount++;
-
             rolldice();
-
-
-
 
         })
 
@@ -585,8 +578,8 @@ $(document).ready(function () {
 
         players.forEach(function (elem, i) {
             //emptys the player images and data
-            $("#player" + (i+1)).empty();
-           
+            $("#player" + (i + 1)).empty();
+
             //Loads the player images
             playerImg = $("<img>");
             playerImg.addClass("img-fluid m-1 border");
@@ -594,20 +587,42 @@ $(document).ready(function () {
             playerImg.attr("width", elem.width);
             playerImg.attr("height", elem.height);
             playerImg.text(elem.name);
-            $("#player" + (i+1)).append(playerImg);
+            $("#player" + (i + 1)).append(playerImg);
 
 
             //loads the player data
             playerData = $("<div>");
             playerData.attr("score", elem.score);
+            console.log(database);
+
+            // when player has score:
+            // database.ref().push({
+
+
         })
 
 
     };
 
+    function dbAuth() {
 
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyD_MbeNXvxMo1ECZz1CumhkdmRlg5oI2YI",
+            authDomain: "tournament-zilch.firebaseapp.com",
+            databaseURL: "https://tournament-zilch.firebaseio.com",
+            projectId: "tournament-zilch",
+            storageBucket: "tournament-zilch.appspot.com",
+            messagingSenderId: "1040397840764"
+        };
+        firebase.initializeApp(config);
 
-
+        // Create a variable to reference the database
+        database = firebase.database();
+        console.log(database);
+    
+        
+    };
 
 
     //Count Array
@@ -641,6 +656,7 @@ $(document).ready(function () {
     //Main Section
     //===================================================
     loadCup();
+    dbAuth();
     load_players();
 
 
