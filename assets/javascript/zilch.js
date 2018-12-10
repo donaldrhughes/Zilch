@@ -22,8 +22,8 @@ $(document).ready(function () {
         score: 0,
         bank: 0,
         src: "assets/images/avatar1.png",
-        width: 50,
-        height: 50,
+        width: 100,
+        height: 100,
         clickable: false
 
     },
@@ -578,6 +578,7 @@ $(document).ready(function () {
 
         players.forEach(function (elem, i) {
             //emptys the player images and data
+            
             $("#player" + (i + 1)).empty();
 
             //Loads the player images

@@ -5,6 +5,12 @@ body{
     color:#eee;
     font-size:14px;
 }
+img{
+   min-width: 15px;
+   min-height:15px;
+  
+    
+}
 /* .main-bg{
     background: url('#') no-repeat center center fixed; 
      -webkit-background-size: cover;
@@ -75,6 +81,8 @@ footer{
 }
 .player1{
     color:black;
+    height:25%;
+    min-height: 100px;
 }
 .player2{
     color:black;
