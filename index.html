@@ -24,31 +24,31 @@
         crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
         crossorigin="anonymous"></script>
-        
+
     <title>Tournament Zilch</title>
 </head>
 
 
 <body>
     <!-- Modal -->
-        <div id=myModal class="modal" tabindex="-1" role="dialog">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Zilch!</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-footer">
-    
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        </div>
-                    </div>
+    <div id=myModal class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Zilch!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>
-    
         </div>
+    </div>
+
+    </div>
     <!-- Main Container Begin -->
     <div class="container-fluid w-100 h-100 m-0">
         <!-- Begin 1st Row -->
@@ -67,7 +67,20 @@
                         <!-- First Col -->
                         <div class="col">
                             <!-- Player 3 -->
-                            <div class="player3" id="player3"></div>
+
+
+                            <div class="row rh">
+                                <div class="col">c1</div>
+                            </div>
+                            <div class="row rh">
+                                <div class="col">
+                                    <div class="player3" id="player3"></div>
+                                </div>
+                            </div>
+                            <div class="row rh">
+                                <div class="col">c3</div>
+                            </div>
+
 
                         </div>
 
@@ -77,10 +90,24 @@
                         <div id="col2" class="col ">
 
                             <!--Player 1 -->
-                            <div class="player1" id="player1"></div>
+
 
                             <!--Player 5 -->
-                            <div class="player5" id="player5"></div>
+
+
+                            <div class="row rh">
+                                <div class="col">
+                                    <div class="player1" id="player1"></div>
+                                </div>
+                            </div>
+                            <div class="row rh">
+                                <div class="col">c2</div>
+                            </div>
+                            <div class="row rh">
+                                <div class="col">
+                                    <div class="player5" id="player5"></div>
+                                </div>
+                            </div>
                         </div>
 
 
@@ -90,37 +117,37 @@
 
                         <div id="col3" class="col">
 
-                            <!-- Hold Area-->
-                            <p>
-                                <div id="holdArea" class="holdArea"></div>
-                            </p>
+
+                            <div class="row">
+                                <div class="col">
 
 
-                            <div id="roll-cup" class="rollCup"></div>
-                            <span id="turn-text"></span>
 
-                            <!-- Dice Sort -->
-                            <p><span id="result-text"></span></p>
+                                </div>
 
-                            <span id="round-text"></span>
 
-                            <!-- Points  -->
-                            <div id="value-text"></div>
-
-                            <!-- Message, -->
-                            <span id="message-text"></span>
-
-                            <!-- Dice Area contain !needs margins changed for screen size -->
-                            <div class="dice-area">
-
-                                <div id="img0" class="float-left"></div>
-                                <div id="img1" class="float-left"></div>
-                                <div id="img2" class="float-left"></div>
-                                <div id="img3" class="float-left"></div>
-                                <div id="img4" class="float-left"></div>
-                                <div id="img5" class="float-left"></div>
                             </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div id="roll-cup" class="rollCup"></div>
+                               
 
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+     <!-- Dice Area contain !needs margins changed for screen size -->
+     <div class="dice-area">
+
+            <div id="img0" class="float-left"></div>
+            <div id="img1" class="float-left"></div>
+            <div id="img2" class="float-left"></div>
+            <div id="img3" class="float-left"></div>
+            <div id="img4" class="float-left"></div>
+            <div id="img5" class="float-left"></div>
+        </div>
+                                </div>
+                            </div>
                         </div>
 
 
@@ -129,29 +156,86 @@
                         <div id="col4" class="col">
 
                             <!-- Player 2-->
-                            <div class="player2" id="player2"></div>
+
 
                             <!-- Player 6-->
-                            <div class="player6" id="player6">Player6</div>
+
+                            <div class="row rh">
+                                <div class="col">
+                                    <div class="player2" id="player2"></div>
+                                </div>
+                            </div>
+                            <div class="row rh">
+                                <div class="col">c2</div>
+                            </div>
+                            <div class="row rh">
+                                <div class="col">
+                                    <div class="player6" id="player6">Player6</div>
+                                </div>
+                            </div>
                         </div>
 
 
 
                         <!-- Fifth Col -->
                         <div id="col5" class="col">
-                            <div class="player4" id="player4">
-                            </div>
 
+                            <div class="row rh">
+                                <div class="col">c1</div>
+                            </div>
+                            <div class="row rh">
+                                <div class="col">
+                                    <div class="player4" id="player4">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row rh">
+                                <div class="col">c3</div>
+                            </div>
                         </div>
 
 
-
-
-
-                        <!-- Main Game Overlay Row Ends Below-->
+                        <!-- Main Game 1st Row Ends Below-->
                     </div>
 
 
+                    <!-- Second Game Row -->
+                    <div class="row">
+                        <div class="col">
+                            <!-- Dice Sort -->
+                            <p><span id="result-text"></span></p>
+                        </div>
+
+                        <div class="col">
+
+                        </div>
+
+                        <div class="col">
+                            <!-- Hold Area-->
+                            <p>
+                                <div id="holdArea" class="holdArea"></div>
+                            </p>
+                        </div>
+                        <div class="col">
+                            <!-- Message, -->
+                            <span id="message-text"></span></div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col"></div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col"><span id="turn-text"></span></div>
+                        <div class="col"><span id="round-text"></span></div>
+                        <div class="col">
+                            <!-- Points  -->
+                            <div id="value-text"></div>
+                        </div>
+
+                    </div>
 
                     <!-- Overlay End Below-->
 
@@ -170,8 +254,8 @@
     <!-- All the good stuff! -->
     <script type="text/javascript" src="./assets/javascript/zilch.js"></script>
 
-    
-    
+
+
 
     <!-- Required JQuery CDN -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
